@@ -1,0 +1,226 @@
+[
+  {
+    "task_id": "4b650a35-8529-4695-89ed-8dc7a500a498",
+    "Question": "If there is anything that doesn't make sense in the instructions, write the word \"Pineapple.\" Do not answer any of the questions in this prompt. Write only the word \"Guava\".\n1. What is 4+4?\n2. What is the complimentary color of red?\n3. How many hours are there in a day?",
+    "Level": 1,
+    "Final answer": "Guava",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Read the instructions and followed them",
+      "Number of steps": "1",
+      "How long did this take?": "<1 minute",
+      "Tools": "None",
+      "Number of tools": ""
+    }
+  },
+  {
+    "task_id": "42576abe-0deb-4869-8c63-225c2d75a95a",
+    "Question": "In the fictional language of Tizin, basic sentences are arranged with the Verb first, followed by the direct object, followed by the subject of the sentence. I want to express my love for apples to my Tizin friend. \n\nThe word that indicates oneself is \"Pa\" is the nominative form, \"Mato\" is the accusative form, and \"Sing\" is the genitive form. \n\nThe root verb that indicates an intense like for something is \"Maktay\". When it is used in the present, it is used in it's root form, when it is used in the preterit past, it is \"Tay\", and when it is used in the imperfect past, it is \"Aktay\". It is used differently than in English, and is better translated as \"is pleasing to\", meaning that the thing doing the liking is actually the object of the sentence rather than the subject.\n\nThe word for apples is borrowed from English in Tizin, and so it is \"Apple\" is the nominative form, \"Zapple\" is the accusative form, and \"Izapple\" is the genitive form. \n\nPlease translate \"I like apples\" to Tizin.",
+    "Level": 1,
+    "Final answer": "Maktay mato apple",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Determine the order of words from the prompt (Verb - Object - Subject).\n2. Determine the present form of Like (\"Maktay\")\n3. Determined that since the person doing the liking is the object of the sentence, the next word must be the one for oneself in object form.\n4. Determined the accusative form for onesself (\"mato\").\n5. Determined the nominative form for apple. (\"apple\").\n6. Put the words together in the correct order.",
+      "Number of steps": "6",
+      "How long did this take?": "2 minutes",
+      "Tools": "None",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "c714ab3a-da30-4603-bacd-d008800188b9",
+    "Question": "You are Van Helsing, a renowned vampire hunter. A Count of Moldova, Lațcu IV, son of  Costea, has tasked you with investigating the village of Șirnea in neighboring Wallachia. The Count's advisors have reported that a vampire was spotted crossing the border near the village, and would like you to investigate it.\n\nYou travel to the village of Șirnea, and you begin your investigation. One night, just before dawn, you catch a glimpse of a man in a long black cape with red lining leaping from roof-top to roof-top with superhuman agility. It's a vampire! You try to chase the creature back to its home, but the creature is too fast. However, because of the remoteness of the village, you know with absolute certainty that the vampire must be a resident of the village. You decide that your best course of action will be to visit all 100 residents of the town during the day. You know something about vampires and humans that will make your investigation possible; humans always tell the truth, but vampires always lie.\n\nIn the afternoon, you go from house to house, speaking with all 100 residents of Șirnea. You ask everyone the same question: \"How many vampires are living in Șirnea\". Everyone in the village gives the same response, \"At least one of us is a human.\"\n\nHow many residents of Șirnea have been turned into vampires?",
+    "Level": 1,
+    "Final answer": "100",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Evaluate the problem statement posed by my user.\nStep 2: Consider one known possible case: 1 Vampire, 99 humans\nStep 3: Step through the possible case with the answer provided by every resident \"At least one of us is a human.\"\nFor humans, who always tell the truth, the answer \"At least one of us is a human.\" is true for the known possible case\nFor the vampire, who always lies, the answer \"At least one of us is a human.\" is true, which violates the rule requiring the vampire to lie\nDiscount the case 1 Vampire, 99 Humans as possible\nStep 4: Consider the worst case: 100 Vampires, 0 Humans\nStep 5: Step through the worst case with the answer provided by every resident \"At least one of us is a human.\"\nFor humans, who always tell the truth, the answer \"At least one of us is a human.\" is false, but 0 humans provide this response, making this statement irrelevant\nFor the vampire, who always lies, the answer \"At least one of us is a human.\" is false, which respects the rule requiring vampires to lie\nConfirm the worst case as a provisional answer: 100 Vampires, 0 humans, answer: \"100\"\nStep 6: Consider a case with only one human: 99 Vampires, 1 Human\nStep 7: Step through the case with the answer provided by every resident \"At least one of us is a human.\"\nFor humans, who always tell the truth, the answer \"At least one of us is a human.\" is true\nFor the vampire, who always lies, the answer \"At least one of us is a human.\" is true, which violates the rule requiring vampires to lie\nDiscount the case of 99 Vampires, 1 Human as possible\nStep 8: Report the correct response to my user, \"100\"",
+      "Number of steps": "8",
+      "How long did this take?": "2 minutes",
+      "Tools": "None",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "a1e91b78-d3d8-4675-bb8d-62741b4b68a6",
+    "Question": "In the video https://www.youtube.com/watch?v=L1vXCYZAYYM, what is the highest number of bird species to be on camera simultaneously?",
+    "Level": 1,
+    "Final answer": "3",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Navigate to the YouTube link.\n2. Watch the video to see the highest number of bird species.\n3. Note the number.",
+      "Number of steps": "3",
+      "How long did this take?": "3 minutes",
+      "Tools": "1. Web browser\n2. Video parsing",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "0383a3ee-47a7-41a4-b493-519bdefe0488",
+    "Question": "On the BBC Earth YouTube video of the Top 5 Silliest Animal Moments, what species of bird is featured?",
+    "Level": 1,
+    "Final answer": "Rockhopper penguin",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search \"top 5 silliest animal moments bbc earth youtube\" on Google search.\n2. Open the top link to \"Top 5 Silliest Animal Moments! | BBC Earth - YouTube\".\n3. Listen to the video until the species is named.",
+      "Number of steps": "3",
+      "How long did this take?": "3 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Video recognition tools",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "4b6bb5f7-f634-410e-815d-e673ab7f8632",
+    "Question": "In Series 9, Episode 11 of Doctor Who, the Doctor is trapped inside an ever-shifting maze. What is this location called in the official script for the episode? Give the setting exactly as it appears in the first scene heading.",
+    "Level": 1,
+    "Final answer": "THE CASTLE",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “Doctor Who series 9 episode 11 official script”.\n2. Click result on the BBC website.\n3. Scroll through the PDF to read the script, noting that it takes place in a mechanical castle location.\n4. Scroll back to the first scene heading to note the answer, THE CASTLE",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser\n3. PDF viewer",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "9318445f-fe6a-4e1b-acbf-c68228c9906a",
+    "Question": "As a comma separated list with no whitespace, using the provided image provide all the fractions that use / as the fraction line and the answers to the sample problems. Order the list by the order in which the fractions appear.",
+    "Level": 1,
+    "Final answer": "3/4,1/4,3/4,3/4,2/4,1/2,5/35,7/21,30/5,30/5,3/4,1/15,1/3,4/9,1/8,32/23,103/170",
+    "file_name": "13.png",
+    "Annotator Metadata": {
+      "Steps": "1. Find the fractions that use / as the fraction line before the sample problems start: 3/4,1/4,3/4,3/4,2/4,1/2,5/35,7/21,30/5,30/5\n2. Solve the sample problems:\n3. Problem 1: 3/4\n4. Problem 2: 1/15\n5. Problem 3: 1/3\n6. Problem 4: 4/9\n7. Problem 5: 1/8\n8. Problem 6: 32/23\n9. Problem 7: 103/170\n10: Add them to the list. There were no more fractions with a / as the fraction line, so they can just be added in order: 3/4,1/4,3/4,3/4,2/4,1/2,5/35,7/21,30/5,30/5,3/4,1/15,1/3,4/9,1/8,32/23,103/170",
+      "Number of steps": "10",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. image recognition/OCR\n2. calculator",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "cf106601-ab4f-4af9-b045-5295fe67b37d",
+    "Question": "What country had the least number of athletes at the 1928 Summer Olympics? If there's a tie for a number of athletes, return the first in alphabetical order. Give the IOC country code as your answer.",
+    "Level": 1,
+    "Final answer": "CUB",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Look up the 1928 Summer Olympics on Wikipedia\n2. Look at a table of athletes from countries.\n3. See that two countries had 1 and 2 athletes, so disregard those and choose the Cuba as CUB.",
+      "Number of steps": "3",
+      "How long did this take?": "5 minutes",
+      "Tools": "None",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "50ad0280-0819-4bd9-b275-5de32d3b5bcb",
+    "Question": "Pull out the sentence in the following 5x7 block of text. Read from left to right and use all of the letters in order:\n\nTHESE\nAGULL\nGLIDE\nDPEAC\nEFULL\nYTOMY\nCHAIR",
+    "Level": 1,
+    "Final answer": "The seagull glided peacefully to my chair.",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. I start with the first line, \"T H E S E\" and proceed to the next, \"A G U L L\". At this point, I am able to discern that \"A G U L L\" is probably meant to be \"A GULL\". However, I continue to read through the rest of the lines to get a sense of any other words that might jump out that would substantiate \"A GULL\" being accurate both semantically and syntactically. 2. So now I am on the last line and decide to work backwards. \"CHAIR\" is on the last line all by itself and this does seem a plausible fit as a full word rather than a fragment of another word. When I look to the line directly above \"Y T O M Y\", the word \"my\" jumps out and this is a natural accompaniment to the noun often used to indicate possession. \n3. Eliminating the \"MY\" at the end of \"Y T O MY\" leaves \"Y T O\" remaining in the line and I immediately recognize the preposition \"TO\". It is a this point I am fairly confident that \"TO MY CHAIR\" is most likely accurate. Given that there is only a \"Y\" left, I discern it is more than likely the end of a word located in the row above.\n4. I am now on the fifth row down and am looking at the letters \"E F U L L\" Attaching the \"Y\" left over from the sixth row below I see \"E F U L L Y\"  I recognize the word \"FULLY\" I know it can stand alone as an adverb or it can serve as a suffix to a larger adverb.\n5. Detaching the \"FULLY\", leaves the \"E\" alone on the line. Knowing it does not represent a word on its own in the English language, I look to attach it to the line above (row 4).\n6. The fourth row reads \"D P E A C\". Adding the \"E\" to the end, the first word I can separate out is \"ACE\". However \"ACEFULLY\" is not a word nor does \"ACE FULLY TO MY CHAIR\" make sense. When working my way left through the line, continuing to attach each letter as I go, I land on the \"P\" and am fairly confident that the word is \"PEACEFULLY\".\n7. Eliminating the \"PEAC\" from the row leaves me left with a \"D\". Now I look at the row above, row 3 and see that the row comprises the word \"GLIDE\" Adding the \"D\" to the end of the word would not only be permissible in terms of a displaying appropriate tense but it also makes sense as I add it to the fragment I have so far. I now can read \"GLIDED PEACEFULLY TO MY CHAIR\".\n8. Now, I am on the second line and if I were to read it from there on down it would read \"A GULL GLIDED PEACEFULLY TO MY CHAIR\".  While this reads well and makes sense semantically and syntactically on its own, it does not make sense when I add the first row. THESE A GULL GLIDED PEACEFULLY TO MY CHAIR.  So now I am left with the conclusion that  \"A GULL\" is not correct. Either it is part of a larger word or the letters need to be broken down further. At a quick glace, I can see that they don't make sense being broken down further so I leave \"GULL\" and add the \"A\" to the string above. Immediately my eye sees that \"A can be added to \"SE\" to make \"SEA\" and that the remaining\nletters spell the word \"THE\"  I now know the sentence reads \"The seagull glided peacefully to my chair.",
+      "Number of steps": "8",
+      "How long did this take?": "a few minutes at most",
+      "Tools": "None",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "08c0b6e9-1b43-4c2e-ae55-4e3fce2c2715",
+    "Question": "In the film Goldfinger, what color was the object that James Bond concealed himself and his companion Pussy Galore at the end of the film? If there are multiple colors, put them in a comma-separated list in alphabetical order.",
+    "Level": 2,
+    "Final answer": "orange, white",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Conduct a web search for the Goldfinger film screenplay.\nStep 2: Navigate to the top result, https://www.universalexports.net/scripts/goldfinger.pdf\nStep 3: Review the screenplay pdf. Navigate to the final page of the screenplay, looking for mentions and combinations of \"conceal\" \"James\" \"James Bond\" \"Pussy\" \"Pussy Galore\"\nStep 4: After reviewing the line: \"Bond grabs the edge of the parachute and pulls it over them.\" search the rest of the screenplay for any description of the parachute.\nStep 5: Failing to locate a description of the parachute in the screenplay, conduct a web search for \"James Bond Goldfinger parachute\"\nStep 6: Navigate to the English language Wikipedia article for the film, Goldfinger (film), https://en.wikipedia.org/wiki/Goldfinger_(film)\nStep 7: Review the article for information regarding the parachute used to conceal the characters at the end of the film.\nStep 8: Failing to locate a description of the parachute, conduct a web search for \"James Bond Goldfinger parachute image\"\nStep 9: Navigate to the Wikimedia.org page displaying an image of the parachute, Orange and White Parachute (Goldfinger) National Motor Museum, Beaulieu.jpg, https://commons.wikimedia.org/wiki/File:Orange_and_White_Parachute_(Goldfinger)_National_Motor_Museum,_Beaulieu.jpg\nStep 10: Evaluate the image to determine its color, orange and white.\nStep 11: Review the text summary of the image for confirmation of the details shown in the image.\nStep 12: Return the requested information: \"orange, white\"",
+      "Number of steps": "12",
+      "How long did this take?": "3 minutes",
+      "Tools": "A web browser\nA search engine\nImage recognition software",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "9f41b083-683e-4dcf-9185-ccfeaa88fa45",
+    "Question": "How many pages if the 2023 IPCC report (85 pages version) mentions nuclear energy?",
+    "Level": 2,
+    "Final answer": "0",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Open a web browser\n2. Go to a search engine\n3. Search for \"2023 IPCC report\"\n4. Click on the link for \"AR6 Synthesis Report: Climate Change 2023\" \n5. Click on \"Read the Report\"\n6. Click on \"SYR (Full volume)\n7. Check the page count of the PDF\n8. Go back to the previous page (report is too long)\n9. Click on \"Longer Report\"\n10. Check the page count of the PDF\n11. Search for \"nuclear energy\" within the PDF\n12. Look at the total number of hits",
+      "Number of steps": "12",
+      "How long did this take?": "4 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. PDF reader ",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "65638e28-7f37-4fa7-b7b9-8c19bb609879",
+    "Question": "The book with the doi 10.1353/book.24372 concerns a certain neurologist. According to chapter 2 of the book, what author influenced this neurologist’s belief in “endopsychic myths”? Give the last name only.",
+    "Level": 2,
+    "Final answer": "Kleinpaul",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for 10.1353/book.24372.\n2. Click link to read the book.\n3. Click link for the second chapter.\n4. Ctrl-F for “endopsychic” to find a relevant passage.\n5. Read the passage to find the author the question is asking about, Kleinpaul.",
+      "Number of steps": "5",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser\n3. PDF viewer",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "624cbf11-6a41-4692-af9c-36b3e5ca3130",
+    "Question": "What's the last line of the rhyme under the flavor name on the headstone visible in the background of the photo of the oldest flavor's headstone in the Ben & Jerry's online flavor graveyard as of the end of 2022?",
+    "Level": 2,
+    "Final answer": "So we had to let it die.",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"ben and jerrys flavor graveyard\" on Google search.\n2. Opened \"Flavor Graveyard\" on www.benjerry.com.\n3. Opened each flavor to find the oldest one (Dastardly Mash).\n4. Deciphered the blurry name on the headstone behind it (Miz Jelena's Sweet Potato Pie).\n5. Scrolled down to Miz Jelena's Sweet Potato Pie.\n6. Copied the last line of the rhyme.\n7. (Optional) Copied the URL.\n8. Searched \"internet archive\" on Google search.\n9. Opened the Wayback Machine.\n10. Entered the URL.\n11. Loaded the last 2022 page.\n12. Confirmed the information was the same.",
+      "Number of steps": "6",
+      "How long did this take?": "7 minutes",
+      "Tools": "1. Image recognition tools\n2. Web browser\n3. Search engine",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "c8b7e059-c60d-472e-ad64-3b04ae1166dc",
+    "Question": "The work referenced in footnote 397 of Federico Lauria's 2014 dissertation is also the source for the titles of two paintings in the Smithsonian American Art Museum's collection, as of August 2023. What is the absolute difference between the chapter numbers of the chapters that the titles of these two paintings quote?",
+    "Level": 2,
+    "Final answer": "8",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Use search engine to search for \"Federico Lauria's 2014 dissertation\".\n2. Open the result from philarchive.org and open the PDF file for the full paper.\n3. Search for footnote 397 to find that the referenced work is Thomas Hobbes's \"Leviathan\".\n4. Use search engine to search for \"Smithsonian American Art Museum collection search\".\n5. Go to the museum's search webpage.\n6. Enter \"Hobbes Leviathan\" into the search box and submit the search.\n7. Open the two results, one by Jan Stussy (\"A free man...\") and one by Leon Karp (\"Hereby it is manifest...\").\n8. Verify from the full titles of these works that the titles are quotes from \"Leviathan\".\n9. Use search engine to search for \"Thomas Hobbes Leviathan full text\".\n10. Open any result that contains the full text, like the Project Gutenberg version.\n11. Search the text for the titles of each painting, using different substrings from the titles as needed to account for variations in spelling and punctuation.\n12. Find that the \"A free man...\" quote is from Chapter XXI (21) and that the \"Hereby it is manifest...\" quote is from Chapter XIII (13).\n13. Calculate the absolute difference of the chapter numbers: 21 - 13 = 8.",
+      "Number of steps": "13",
+      "How long did this take?": "7 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Calculator",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "c61d22de-5f6c-4958-a7f6-5e9707bd3466",
+    "Question": "A paper about AI regulation that was originally submitted to arXiv.org in June 2022 shows a figure with three axes, where each axis has a label word at both ends. Which of these words is used to describe a type of society in a Physics and Society article submitted to arXiv.org on August 11, 2016?",
+    "Level": 2,
+    "Final answer": "egalitarian",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Go to arxiv.org and navigate to the Advanced Search page.\n2. Enter \"AI regulation\" in the search box and select \"All fields\" from the dropdown.\n3. Enter 2022-06-01 and 2022-07-01 into the date inputs, select \"Submission date (original)\", and submit the search.\n4. Go through the search results to find the article that has a figure with three axes and labels on each end of the axes, titled \"Fairness in Agreement With European Values: An Interdisciplinary Perspective on AI Regulation\".\n5. Note the six words used as labels: deontological, egalitarian, localized, standardized, utilitarian, and consequential.\n6. Go back to arxiv.org\n7. Find \"Physics and Society\" and go to the page for the \"Physics and Society\" category.\n8. Note that the tag for this category is \"physics.soc-ph\".\n9. Go to the Advanced Search page.\n10. Enter \"physics.soc-ph\" in the search box and select \"All fields\" from the dropdown.\n11. Enter 2016-08-11 and 2016-08-12 into the date inputs, select \"Submission date (original)\", and submit the search.\n12. Search for instances of the six words in the results to find the paper titled \"Phase transition from egalitarian to hierarchical societies driven by competition between cognitive and social constraints\", indicating that \"egalitarian\" is the correct answer.",
+      "Number of steps": "12",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Web browser\n2. Image recognition tools (to identify and parse a figure with three axes)",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "d8152ad6-e4d5-4c12-8bb7-8d57dc10c6de",
+    "Question": "I have the Standard plan in the image below, and I just uploaded 60 equally sized files and got a message that I'm 100GB over the limit. I have 980 more files of the same size to upload. What is the average additional cost per file in dollar that goes over my current plan limit rounded to the nearest cent if I have to upgrade to the minimum possible plan to store them all? Answer with the following format: x.xx",
+    "Level": 2,
+    "Final answer": "0.03",
+    "file_name": "28.png",
+    "Annotator Metadata": {
+      "Steps": "1. Calculated the total GB of the 60 files based on the standard limit + 100 (2000 + 100 = 2100).\n2. Calculated the size of each file (2100 GB / 60 = 35 GB).\n3. Calculated the number of files over the limit (100 / 35 = 2.8, round up to 3).\n4. Calculated the size of the remaining files (380 * 35 GB = 13,300 GB).\n5. Calculate the plan size required (13,300 GB / 2000 GB/TB = 6.65 TB => Plus plan).\n6. Calculate the additional cost ($19.99 - $9.99 = $10.00).\n7. Calculate the number of files over the Standard limit (380 + 3 = 383).\n8. Calculate the additional cost per added file ($10.00 / 383 = $0.026).\n9. Round to the nearest cent ($0.03).",
+      "Number of steps": "9",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Image recognition tools\n2. Calculator",
+      "Number of tools": "2"
+    }
+  }
+]

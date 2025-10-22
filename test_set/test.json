@@ -1,0 +1,212 @@
+[
+  {
+    "task_id": "ec09fa32-d03f-4bf8-84b0-1f16922c3ae4",
+    "Question": "Here's a fun riddle that I think you'll enjoy.\n\nYou have been selected to play the final round of the hit new game show \"Pick That Ping-Pong\". In this round, you will be competing for a large cash prize. Your job will be to pick one of several different numbered ping-pong balls, and then the game will commence. The host describes how the game works.\n\nA device consisting of a winding clear ramp and a series of pistons controls the outcome of the game. The ramp feeds balls onto a platform. The platform has room for three ping-pong balls at a time. The three balls on the platform are each aligned with one of three pistons. At each stage of the game, one of the three pistons will randomly fire, ejecting the ball it strikes. If the piston ejects the ball in the first position on the platform the balls in the second and third position on the platform each advance one space, and the next ball on the ramp advances to the third position. If the piston ejects the ball in the second position, the ball in the first position is released and rolls away, the ball in the third position advances two spaces to occupy the first position, and the next two balls on the ramp advance to occupy the second and third positions on the platform. If the piston ejects the ball in the third position, the ball in the first position is released and rolls away, the ball in the second position advances one space to occupy the first position, and the next two balls on the ramp advance to occupy the second and third positions on the platform.\n\nThe ramp begins with 100 numbered ping-pong balls, arranged in ascending order from 1 to 100. The host activates the machine and the first three balls, numbered 1, 2, and 3, advance to the platform. Before the random firing of the pistons begins, you are asked which of the 100 balls you would like to pick. If your pick is ejected by one of the pistons, you win the grand prize, $10,000.\n\nWhich ball should you choose to maximize your odds of winning the big prize? Please provide your answer as the number of the ball selected.",
+    "Level": 1,
+    "Final answer": "3",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Evaluate the problem statement provided in my user's prompt\nStep 2: Consider the probability of any ball on the platform earning the prize.\nStep 3: Evaluate the ball in position one. The probability of it earning the prize, P1, is 1/3\nStep 4: Using a calculator, evaluate the ball in position two. The probability of it earning the prize, P2, is the difference between 1 and the product of the complementary probabilities for each trial\nP2 = 1 - (2/3)(2/3)\nP2 = 5/9\nStep 5: Using a calculator, evaluate the ball in position three. The probability of it earning the prize, P3, is the difference between 1 and the product of the complementary probabilities for each trial\nP3 = 1 - (2/3)(2/3)(2/3)\nP3 = 19/27\nStep 6: Consider the possible outcomes of numbers higher than 3.\nStep 7: For each trial, either 1 or 2 balls from the ramp will advance to the platform. For any given selection, there is a 50% chance that the ball advances to position 2 or position 3.\nStep 8: As position three holds the highest chance of earning the prize, select the only ball known to occupy position three with certainty, ball 3.\nStep 9: Report the correct answer to my user, \"3\"",
+      "Number of steps": "9",
+      "How long did this take?": "1 minute",
+      "Tools": "None",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "9d191bce-651d-4746-be2d-7ef8ecadb9c2",
+    "Question": "Examine the video at https://www.youtube.com/watch?v=1htKBjuUWec.\n\nWhat does Teal'c say in response to the question \"Isn't that hot?\"",
+    "Level": 1,
+    "Final answer": "Extremely",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Follow the link\n2. Watch the clip until the question \"Isn't that hot\" is asked\n3. Take note of the reply.",
+      "Number of steps": "3",
+      "How long did this take?": "2 minutes",
+      "Tools": "1. Web browser\n2. Video processing software\n3. Audio processing software",
+      "Number of tools": "1"
+    }
+  },
+  {
+    "task_id": "5d0080cb-90d7-4712-bc33-848150e917d3",
+    "Question": "What was the volume in m^3 of the fish bag that was calculated in the University of Leicester paper \"Can Hiccup Supply Enough Fish to Maintain a Dragon’s Diet?\"",
+    "Level": 1,
+    "Final answer": "0.1777",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched '\"Can Hiccup Supply Enough Fish to Maintain a Dragon’s Diet?\"' on Google.\n2. Opened \"Can Hiccup Supply Enough Fish to Maintain a Dragon’s Diet?\" at https://journals.le.ac.uk/ojs1/index.php/jist/article/view/733.\n3. Clicked \"PDF\".\n4. Found the calculations for the volume of the fish bag and noted them.",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. PDF access",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "305ac316-eef6-4446-960a-92d80d542f82",
+    "Question": "Who did the actor who played Ray in the Polish-language version of Everybody Loves Raymond play in Magda M.? Give only the first name.",
+    "Level": 1,
+    "Final answer": "Wojciech",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search \"Polish-language version of Everybody Loves Raymond\" and pull up the Wiki page for Wszyscy kochają Romana.\n2. See that Bartłomiej Kasprzykowski is marked as playing Ray and go to his Wiki page.\n3. See that he is stated to have played Wojciech Płaska in Magda M.",
+      "Number of steps": "3",
+      "How long did this take?": "5 minutes",
+      "Tools": "None",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "e142056d-56ab-4352-b091-b56054bd1359",
+    "Question": "Bob was invited to participate in a game show, and he advanced to the final round. The final round offered Bob the chance to win a large sum by playing a game against the host. The host has 30 shiny prop coins, each of which is worth $1,000 if Bob manages to win them by playing the game. The host hides the coins in three different prize boxes and then shuffles their order. The only rule restricting the host's coin placement is that one box must contain at least 2 coins, and one box must contain 6 more coins than another box. In order to play, Bob must submit three guesses, one guess for the number of coins in each box. The box is then opened and the number of coins is revealed. If Bob's guess is a number greater than the number of coins in the box, Bob earns no coins. If Bob guesses a number equal to or less than the number of coins in the box, Bob wins a number of coins equal to his guess.\n\nIf Bob plays uses the optimal strategy, what's the minimum amount of money he can win from the game?",
+    "Level": 1,
+    "Final answer": "16000",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Evaluate the problem statement provided by my user, storing the relevant information: \n30 coins with a value of $1,000 distributed between 3 boxes.\nEach box must contain at least 2 coins\nOne box must contain 6 more coins than another\n\nStep 2: Evaluate the base distribution: 2-8-20, noting that two boxes must contain at least 8 coins\n\nStep 3: Evaluate the most even allowable distribution: 8,8,14, noting that two boxes must contain at least 8 coins\n\nStep 4: Evaluate a case where Bob guesses 8 for each box in the outlier distributions.\nStep 5: For the worst case 2-8-20 distribution, Bob wins 0+8+8 = 16 coins\nStep 6: For the 8-8-14 distribution, Bob wins 8+8+8 = 24 coins\nStep 7: Convert the worst-case coin count to a prize value, 16*$1,000 = $16,000\nStep 8: Report the correct answer to my user: \"$16,000\"",
+      "Number of steps": "8",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. A calculator",
+      "Number of tools": "1"
+    }
+  },
+  {
+    "task_id": "dc28cf18-6431-458b-83ef-64b3ce566c10",
+    "Question": "My family reunion is this week, and I was assigned the mashed potatoes to bring. The attendees include my married mother and father, my twin brother and his family, my aunt and her family, my grandma and her brother, her brother's daughter, and his daughter's family. All the adults but me have been married, and no one is divorced or remarried, but my grandpa and my grandma's sister-in-law passed away last year. All living spouses are attending. My brother has two children that are still kids, my aunt has one six-year-old, and my grandma's brother's daughter has three kids under 12. I figure each adult will eat about 1.5 potatoes of mashed potatoes and each kid will eat about 1/2 a potato of mashed potatoes, except my second cousins don't eat carbs. The average potato is about half a pound, and potatoes are sold in 5-pound bags. How many whole bags of potatoes do I need? Just give the number.",
+    "Level": 1,
+    "Final answer": "2",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Calculate the number of adults (mother, father, brother, brother's wife, aunt, aunt's husband, grandma, grandma's brother, grandma's brother's daughter, grandma's brother's daughter's husband, me = 11).\n2. Calculate the number of children (niece, nephew, cousin, grandma's brother's daughter's kids x3 = 6).\n3. Subtract the number of second cousins (grandma's brother's daughter's kids) (6 - 3 = 3).\n4. Calculate the adult potatoes (11 * 1.5 = 16.5).\n5. Calculate the child potatoes (3 * 0.5 = 1.5).\n6. Add to get the total potatoes (16.5 + 1.5 = 18).\n7. Multiply to get the pounds of potatoes (18 * 0.5 = 9 pounds).\n8. Calculate the number of 5-lb bags needed (9 / 5 = 1.8).\n9. Round up to get total bags (2).",
+      "Number of steps": "9",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Calculator",
+      "Number of tools": "1"
+    }
+  },
+  {
+    "task_id": "04a04a9b-226c-43fd-b319-d5e89743676f",
+    "Question": "If we assume all articles published by Nature in 2020 (articles, only, not book reviews/columns, etc) relied on statistical significance to justify their findings and they on average came to a p-value of 0.04, how many papers would be incorrect as to their claims of statistical significance? Round the value up to the next integer.",
+    "Level": 2,
+    "Final answer": "41",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Find how many articles were published in Nature in 2020 by Googling \"articles submitted to nature 2020\"\n2. Click through to Nature's archive for 2020 and filter the results to only provide articles, not other types of publications: 1002\n3. Find 4% of 1002 and round up: 40.08 > 41",
+      "Number of steps": "3",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. search engine\n2. calculator",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "b4cc024b-3f5e-480e-b96a-6656493255b5",
+    "Question": "The photograph in the Whitney Museum of American Art's collection with accession number 2022.128 shows a person holding a book. Which military unit did the author of this book join in 1813? Answer without using articles.",
+    "Level": 2,
+    "Final answer": "Russian-German Legion",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Use search engine to search for \"Whitney Museum of American Art collection search\".\n2. Go to the Whitney Museum's collection search webpage.\n3. Enter 2022.128 in the search box and submit the search.\n4. Open the single result, titled \"Rain in Rifle Season, Distributions from Split-Interest Trusts, Price Includes Uniform, Never Hit Soft, 2003\".\n5. Verify that this photograph has the correct accession number.\n6. Note that the subject of the photograph is holding the book \"On War\", by Carl von Clausewitz.\n7. Go to the Wikipedia page for Carl von Clausewitz.\n8. Search the page for 1813 to find that Carl von Clausewitz joined the Russian-German Legion in 1813.\n9. Go to the Wikipedia page for Russian-German Legion to verify that this was a military unit.",
+      "Number of steps": "9",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Tool to extract text from images",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "b9763138-c053-4832-9f55-86200cb1f99c",
+    "Question": "Compute the check digit the Tropicos ID for the Order Helotiales would have if it were an ISBN-10 number.",
+    "Level": 2,
+    "Final answer": "3",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search \"Tropicos ID Order Helotiales\"\n2. Find the correct ID on the first result\n3. Search \"isbn 10 check digit calculator\" or calculate check digit by hand",
+      "Number of steps": "3",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. web browser\n2. search engine\n3. calculator",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "8f80e01c-1296-4371-9486-bb3d68651a60",
+    "Question": "Using bass clef notes, what is the age of someone who has experienced the word spelled out in the sheet music by the note letters the total number of lines and notes minus the number of notes on lines in the image?",
+    "Level": 2,
+    "Final answer": "90",
+    "file_name": "14.png",
+    "Annotator Metadata": {
+      "Steps": "1. Open the file.\n2. Translate the letters to bass notes (\"D E C A D E\").\n3. Count the lines (5).\n4. Count the notes (6).\n5. Count the notes on lines (2).\n6. Add the lines and notes (11).\n7. Subtract the notes on lines (11 - 2).\n8. Multiply 10 by 9 (90).\n9. Note the age given.",
+      "Number of steps": "9",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Image recognition\n2. Bass note data\n3. Calculator",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "d1af70ea-a9a4-421a-b9cc-94b5e02f1788",
+    "Question": "As of the 2020 census, what was the population difference between the largest county seat and smallest county seat, by land area of the county seat, in Washington state? For population figures, please use the official data from data.census.gov. Please report the integer difference.",
+    "Level": 2,
+    "Final answer": "736455",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Using a web browser, access a search engine and conduct a search, \"Washington cities by area\"\nStep 2: Navigate to the second search result, https://en.wikipedia.org/wiki/List_of_municipalities_in_Washington\nStep 3: Evaluate the page contents, finding the largest and smallest county seats by land area, Seattle and Cathlamet\nStep 4: Using a web browser, navigate to https://data.census.gov/\nStep 5: Using the website's search area, conduct a search, Seattle, Washington\nStep 6: Record the reported 2020 Decennial Census population of Seattle, Washington, 737,015\nStep 7: Using the website's search area, conduct a search, Cathlamet, Washington\nStep 8: Record the reported 2020 Decennial Census population of Cathlamet, Washington, 560\nStep 9: Using a calculator, find the difference in populations,\n\n737,015 - 560\n736,455\nStep 10: Report the correct answer to my user in the requested format, \"736,455\"",
+      "Number of steps": "10",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. A web browser\n2. A search engine\n3. A calculator",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "73c1b9fe-ee1d-4cf4-96ca-35c08f97b054",
+    "Question": "According to the USGS, in what year was the American Alligator first found west of Texas (not including Texas)?",
+    "Level": 2,
+    "Final answer": "1954",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “American Alligator USGS”.\n2. Click result for the USGS Species Profile.\n3. Click “Animated Map”.\n4. Click the “Skip years with no recorded sightings” button.\n5. Zoom out on the map to better view the whole U.S.\n6. Move the slider back to the beginning, then advance it until I see a red dot pop up west of Texas.\n7. Note the year that the dot appears, 1954.",
+      "Number of steps": "7",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser\n3. Image recognition",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "e29834fd-413a-455c-a33e-c3915b07401c",
+    "Question": "I'd like to learn more about some popular reality television competition shows. As of the end of the 44th season of the American version of Survivor, how many more unique winners have there been compared to the number of winners of American Idol?",
+    "Level": 2,
+    "Final answer": "21",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Using a web browser, access a search engine and conduct a search \"American Survivor Television Series winners\"\nStep 2: Navigate to the first result, https://en.wikipedia.org/wiki/Survivor_(American_TV_series)\nStep 3: Evaluate the article and count the number of unique winners of the program: 42 winners\nStep 4: Navigate back to a search engine and conduct a search \"American Idol Winners\"\nStep 5: Navigate to the first search result, https://www.etonline.com/gallery/the-complete-list-of-american-idol-winners-21116/season-21-iam-tongi-92872\nStep 6: Evaluate the article and count the number of unique winners of the program: 21\nStep 7: Using a calculator, subtract the number of American Idol winners from the number of Survivor winners, 42-21 = 21\nStep 8: Report the correct response to my user, \"21\"",
+      "Number of steps": "8",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. A web browser\n2. A search engine\n3. A calculator",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "ecbc4f94-95a3-4cc7-b255-6741a458a625",
+    "Question": "How many images are there in the latest 2022 Lego english wikipedia article?",
+    "Level": 2,
+    "Final answer": "13",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Open a web browser\n2. Navigate to en.wikipedia.org\n3. Search for \"lego\"\n4. Click on \"View history\"\n5. Click on \"Page statistics\"\n6. Click on \"Month counts\"\n7. In the \"Month counts\" table, click on the edits for the latest month in 2022 (2022-12)\n8. Click on the latest link on the page, \"02:02, 21 December 2022‎\"\n9. Click on \"View source\"\n10. Read to confirm if the source is from the given version (unable to determine)\n11. Go back one page\n12. Visually count the number of images displayed on the page",
+      "Number of steps": "12",
+      "How long did this take?": "6 minutes",
+      "Tools": "1. Web browser\n2. Access to Wikipedia\n3. Image recognition tools",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "872bfbb1-9ccf-49f6-8c5f-aa22818ccd66",
+    "Question": "Which of the fruits shown in the 2008 painting \"Embroidery from Uzbekistan\" were served as part of the October 1949 breakfast menu for the ocean liner that was later used as a floating prop for the film \"The Last Voyage\"? Give the items as a comma-separated list, ordering them in clockwise order based on their arrangement in the painting starting from the 12 o'clock position. Use the plural form of each fruit.",
+    "Level": 3,
+    "Final answer": "pears, bananas",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Use search engine to search for \"2008 painting Embroidery from Uzbekistan\".\n2. Open the top result, a link to the painting's page on the Dayton Art Institute website, and verify that the painting has the specified title and year.\n3. Identify the fruits in the painting as watermelon, pear, lemon, and banana, which can be verified by either watching the video on the page or reading its linked transcript.\n4. Use search engine to search for \"ocean liner floating prop The Last Voyage\".\n5. Note from the results that this ocean liner was the SS Île de France.\n6. Use search engine to search for \"October 1949 breakfast menu SS Île de France\".\n7. Go to the result that shows the vintage SS Île de France breakfast menu for October 1949.\n8. Search the menu for each of the four fruits from the painting, finding \"Pear\" and \"Bananas\" but no matches for \"lemon\" or \"watermelon\".\n9. Check the positions of the fruits in the painting to find that the pears come before the bananas in clockwise order starting from the 12 o'clock position.\n10. Format the final answer as specified using the correct ordering: pears, bananas",
+      "Number of steps": "10",
+      "How long did this take?": "6",
+      "Tools": "1. Web browser\n2. Search engine\n3. Image recognition and processing tools",
+      "Number of tools": "3"
+    }
+  }
+]
