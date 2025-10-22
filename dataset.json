@@ -1,0 +1,16 @@
+{
+    "dataset": [
+    {
+        "question": "What is the capital of France?",
+        "answer": "Paris"
+    },
+    {
+        "question": "What is the capital of Germany?",
+        "answer": "Berlin"
+    },
+    {
+        "question": "What is the capital of Italy?",
+        "answer": "Rome"
+    }
+    ]
+}
