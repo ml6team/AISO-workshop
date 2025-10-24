@@ -186,40 +186,7 @@ root_agent = llm_agent.Agent(
 )
 ```
 
-### 3. Import Style Guidelines
-
-This project follows Google's Python import style guide:
-
-**Import modules, not individual classes or functions:**
-
-```python
-# Good
-from google.adk.agents import llm_agent
-from my_agent.tools import web_search
-
-agent = llm_agent.Agent(...)
-result = web_search.web_search(query)
-
-# Bad
-from google.adk.agents.llm_agent import Agent  # Don't import classes
-from my_agent.tools.web_search import web_search  # Don't import functions
-```
-
-**Exception:** You can directly import from `typing`, `collections.abc`, and `typing_extensions`:
-```python
-from typing import Optional, List  # This is OK
-```
-
-**No relative imports:**
-```python
-# Good
-from my_agent.tools import web_search
-
-# Bad
-from .tools import web_search  # Don't use relative imports
-```
-
-### 4. Tips for Success
+### 3. Tips for Success
 
 - **Start simple**: Get a basic agent working first, then add complexity
 - **Test frequently**: Use `adk web` to interactively test changes
