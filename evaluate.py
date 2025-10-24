@@ -31,11 +31,11 @@ else:
     print("Warning: GEMINI_API_KEY not set. LLM judge will not be available.")
 
 
-DATASET_PATH = "benchmark/validation.json"
+DATASET_PATH = "benchmark/train.json"
 ATTACHMENTS_FOLDER_PATH = "benchmark/attachments"
 
 def _load_dataset():
-    """Load the validation dataset."""
+    """Load the train dataset."""
     dataset_path = DATASET_PATH
 
     try:
@@ -240,7 +240,7 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Evaluate the agent on validation dataset")
+    parser = argparse.ArgumentParser(description="Evaluate the agent on train dataset")
     parser.add_argument(
         "--question",
         type=int,

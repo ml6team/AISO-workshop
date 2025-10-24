@@ -19,9 +19,9 @@ This is where you'll spend most of your time:
 - `my_agent/agent.py` - Define your agent's configuration and capabilities
 - `my_agent/tools/` - Add custom tools/functions for your agent to use
 
-**Other folders (scaffolding - no need to modify):**
-- `scripts/` - Infrastructure code for running and evaluating agents
-- `data/` - Test and validation datasets
+**Other folders (scaffolding - do not modify):**
+- `utils/` - Infrastructure code for running and evaluating agents
+- `benchmark/` - Train benchmark
 - `evaluate.py` - Evaluation script (feel free to read and understand it!)
 
 ## Quick Start
@@ -101,7 +101,7 @@ Then open http://127.0.0.1:8000 in your browser. This gives you:
 
 ### Option 2: Run Evaluations
 
-Test your agent against the validation dataset:
+Test your agent against the train dataset:
 
 **Evaluate all questions:**
 ```bash
@@ -225,7 +225,7 @@ from .tools import web_search  # Don't use relative imports
 - **Test frequently**: Use `adk web` to interactively test changes
 - **Read the docs**: Everything you need to know about using the ADK can be found in the [official ADK documentation](https://google.github.io/adk-docs/)
 - **Check out examples**: Browse the [ADK samples repository](https://github.com/google/adk-samples) for inspiration and working examples
-- **Understand the dataset**: Look at questions in `benchmark/validation.json` to understand what your agent needs to handle (some have attachments)
+- **Understand the dataset**: Look at questions in `benchmark/train.json` to understand what your agent needs to handle (some have attachments)
 - **Iterate**: Run evaluations, analyze failures, improve prompts/tools, repeat!
 
 ## Advanced: Viewing Evaluations in the Web UI
@@ -265,9 +265,8 @@ gdg-hackathon-prep/
 │   └── .env              # Your API key (create this!)
 ├── scripts/              # Scaffolding (don't modify)
 │   └── agent.py          # Agent runner infrastructure
-├── data/                 # Datasets (read-only)
-│   ├── validation_sets/  # For testing
-│   └── test_set/         # For final evaluation
+├── benchmark/            # Train dataset (read-only)
+│   ├── attachments/      # Files to answer some questions
 ├── evaluate.py           # Evaluation script
 ├── pyproject.toml        # Project dependencies
 └── README.md             # This file
@@ -282,7 +281,7 @@ uv sync
 
 **API key issues:**
 - Make sure you copied `.local_env` to `.env` in the `my_agent/` folder
-- Verify the key variable has been sets
+- Verify the API key variable has been set
 
 **Port already in use:**
 ```bash
@@ -301,6 +300,6 @@ lsof -ti:8000 | xargs kill -9
 ### Getting Help
 
 - **Documentation**: Almost everyrthing you need can be found in the official ADK docs linked above
-- **Other Issues**: Feel free to reach out to on of our colleagues walking around
+- **Other Issues**: Feel free to reach out to one of the ML6 ML Engineers walking around
 
-Good luck building your agent!
+Good luck building your agent! 🚀
