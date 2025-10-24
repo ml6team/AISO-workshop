@@ -132,15 +132,15 @@ Results include:
 Open `my_agent/agent.py`:
 
 ```python
-from google.adk.agents.llm_agent import Agent
-from .tools.web_search import web_search
+from google.adk.agents import llm_agent
+from my_agent.tools import web_search
 
-root_agent = Agent(
-    model='gemini-2.5-flash',  # or 'gemini-2.0-flash-exp'
+root_agent = llm_agent.Agent(
+    model='gemini-2.5-flash-lite',  # or other options such as 'gemini-2.0-flash'
     name='agent',
     description="A helpful assistant that can answer questions.",
     instruction="You are a helpful assistant...",  # Customize this!
-    tools=[web_search],  # Add your tools here
+    tools=[web_search.web_search],  # Add your tools here
 )
 ```
 
@@ -176,21 +176,56 @@ def calculator(operation: str, a: float, b: float) -> float:
 
 Then import and add it to your agent in `agent.py`:
 ```python
-from .tools.calculator import calculator
+from google.adk.agents import llm_agent
+from my_agent.tools import web_search
+from my_agent.tools import calculator
 
-root_agent = Agent(
+root_agent = llm_agent.Agent(
     # ...
-    tools=[web_search, calculator],
+    tools=[web_search.web_search, calculator.calculator],
 )
 ```
 
-### 3. Tips for Success
+### 3. Import Style Guidelines
+
+This project follows Google's Python import style guide:
+
+**Import modules, not individual classes or functions:**
+
+```python
+# Good
+from google.adk.agents import llm_agent
+from my_agent.tools import web_search
+
+agent = llm_agent.Agent(...)
+result = web_search.web_search(query)
+
+# Bad
+from google.adk.agents.llm_agent import Agent  # Don't import classes
+from my_agent.tools.web_search import web_search  # Don't import functions
+```
+
+**Exception:** You can directly import from `typing`, `collections.abc`, and `typing_extensions`:
+```python
+from typing import Optional, List  # This is OK
+```
+
+**No relative imports:**
+```python
+# Good
+from my_agent.tools import web_search
+
+# Bad
+from .tools import web_search  # Don't use relative imports
+```
+
+### 4. Tips for Success
 
 - **Start simple**: Get a basic agent working first, then add complexity
 - **Test frequently**: Use `adk web` to interactively test changes
 - **Read the docs**: Everything you need to know about using the ADK can be found in the [official ADK documentation](https://google.github.io/adk-docs/)
 - **Check out examples**: Browse the [ADK samples repository](https://github.com/google/adk-samples) for inspiration and working examples
-- **Understand the dataset**: Look at questions in `data/validation_sets/validation.json` to understand what your agent needs to handle
+- **Understand the dataset**: Look at questions in `benchmark/validation.json` to understand what your agent needs to handle (some have attachments)
 - **Iterate**: Run evaluations, analyze failures, improve prompts/tools, repeat!
 
 ## Advanced: Viewing Evaluations in the Web UI

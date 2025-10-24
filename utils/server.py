@@ -2,14 +2,12 @@
 Google ADK Agent Runner using API Server.
 This module provides a function to run the ADK agent via HTTP requests to the API server.
 """
-import requests
-import time
-import subprocess
-import os
-import signal
 import atexit
+import os
+import requests
+import subprocess
+import time
 import uuid
-from pathlib import Path
 
 
 class ADKAgentRunner:
@@ -114,7 +112,7 @@ class ADKAgentRunner:
             )
             session_response.raise_for_status()
         except requests.exceptions.RequestException as e:
-            return f"Error creating session: {e}"
+            raise RuntimeError(f"Failed to create session for agent '{self.agent_name}': {e}") from e
 
         # Prepare message
         message_parts = [{"text": question}]
@@ -155,7 +153,7 @@ class ADKAgentRunner:
             return response_text.strip()
 
         except requests.exceptions.RequestException as e:
-            return f"Error running agent: {e}"
+            raise RuntimeError(f"Failed to run agent on question: {e}") from e
 
 
 # Global runner instance

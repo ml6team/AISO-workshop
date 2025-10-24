@@ -3,19 +3,21 @@ This file will be used to evaluate the performance of your agent.
 Make sure to set the API key in the .env file. See README.md for more details.
 """
 import argparse
+import datetime
 import json
 import os
-from datetime import datetime
-from pathlib import Path
-from dotenv import load_dotenv
+import pathlib
+
+import dotenv
+import pydantic
 from google import genai
-from pydantic import BaseModel
-from scripts.agent import run_agent
 
-load_dotenv(dotenv_path=Path("my_agent/.env"))
+from utils import server
+
+dotenv.load_dotenv(dotenv_path=pathlib.Path("my_agent/.env"))
 
 
-class JudgeResponse(BaseModel):
+class JudgeResponse(pydantic.BaseModel):
     """Pydantic model for LLM judge response."""
     is_correct: bool
 
@@ -29,19 +31,21 @@ else:
     print("Warning: GEMINI_API_KEY not set. LLM judge will not be available.")
 
 
-def _load_dataset(use_verbose=True):
+def _load_dataset():
     """Load the validation dataset."""
-    if use_verbose:
-        dataset_path = "validation_sets/validation_verbose.json"
-    else:
-        dataset_path = "validation_sets/validation.json"
+    dataset_path = "benchmark/validation.json"
 
-    with open(dataset_path, "r") as f:
-        data = json.load(f)
-        # Handle both array format and dict with "dataset" key
-        if isinstance(data, dict) and "dataset" in data:
-            return data["dataset"]
-        return data
+    try:
+        with open(dataset_path, "r") as f:
+            data = json.load(f)
+            # Handle both array format and dict with "dataset" key
+            if isinstance(data, dict) and "dataset" in data:
+                return data["dataset"]
+            return data
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Dataset file not found: {dataset_path}")
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in dataset file: {e}")
 
 
 def string_match(response: str, expected_answer: str) -> bool:
@@ -56,15 +60,18 @@ def string_match(response: str, expected_answer: str) -> bool:
     return False
 
 
-def llm_judge(response: str, expected_answer: str, question: str) -> dict:
+def llm_judge(response: str, expected_answer: str, question: str) -> bool:
     """
     Use LLM as a judge to determine if the response is correct.
-    Returns a dict with 'is_correct' boolean and 'reasoning' string.
+    Returns a boolean indicating if the response is correct.
     """
     if client is None:
-        return {"is_correct": False, "reasoning": "LLM judge not available - GEMINI_API_KEY not set"}
-
-    prompt = f"""You are an evaluation judge. Determine if the agent's response correctly answers the question.
+        raise ValueError("GOOGLE_API_KEY not set")
+    if response is None or response.strip() == "":
+        return False
+    prompt = f"""
+    You are an evaluation judge.
+    Determine if the agent's response is semantically completely equivalent to the expected answer.
 
 Question: {question}
 
@@ -74,16 +81,11 @@ Agent's Response: {response}
 
 Evaluate whether the agent's response is semantically equivalent to the expected answer, even if worded differently.
 Be strict but fair - minor variations in wording are acceptable if the core answer is correct.
-
-Respond in JSON format with:
-{{
-    "is_correct": true/false,
-    "reasoning": "Brief explanation of your judgment"
-}}"""
+"""
 
     try:
         llm_response = client.models.generate_content(
-            model="gemini-2.0-flash-exp",
+            model="gemini-2.5-flash-lite",
             contents=prompt,
             config={
                 "response_mime_type": "application/json",
@@ -137,20 +139,12 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
     # Run the agent (using USER_ID env var if set, otherwise default "dev_user")
     user_id = os.getenv("USER_ID", "dev_user")
     try:
-        agent_response = run_agent(question, file_paths, user_id=user_id)
+        agent_response = server.run_agent(question, file_paths, user_id=user_id)
         print(f"\nAgent Response: {agent_response}")
         print(f"Expected Answer: {expected_answer}")
     except Exception as e:
         print(f"Error running agent: {e}")
-        return {
-            "question_idx": question_idx,
-            "question": question,
-            "expected_answer": expected_answer,
-            "agent_response": None,
-            "error": str(e),
-            "correct": False,
-            "method": "error"
-        }
+        raise e
 
     # First try string matching
     string_matches = string_match(agent_response, expected_answer)
@@ -168,13 +162,9 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
 
     # Fall back to LLM judge
     print("\nString match failed, using LLM judge...")
-    judge_result = llm_judge(agent_response, expected_answer, question)
-
-    is_correct = judge_result["is_correct"]
-    reasoning = judge_result["reasoning"]
+    is_correct = llm_judge(agent_response, expected_answer, question)
 
     print(f"LLM Judge: {'✓ Correct' if is_correct else '✗ Incorrect'}")
-    print(f"Reasoning: {reasoning}")
 
     return {
         "question_idx": question_idx,
@@ -183,7 +173,6 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
         "agent_response": agent_response,
         "correct": is_correct,
         "method": "llm_judge",
-        "judge_reasoning": reasoning
     }
 
 
@@ -194,7 +183,7 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
     Returns:
         Dict with aggregated results
     """
-    dataset = _load_dataset(use_verbose=True)
+    dataset = _load_dataset()
 
     results = []
     correct_count = 0
@@ -215,7 +204,7 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
 
     # Prepare summary
     summary = {
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": datetime.datetime.now().isoformat(),
         "total_questions": total_count,
         "correct": correct_count,
         "incorrect": total_count - correct_count,
@@ -235,12 +224,14 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
 
     # Save results to file
     if output_file is None:
-        output_file = f"evaluation_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        output_file = f"evaluation_results_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
 
-    with open(output_file, "w") as f:
-        json.dump(summary, f, indent=2)
-
-    print(f"\nResults saved to: {output_file}")
+    try:
+        with open(output_file, "w") as f:
+            json.dump(summary, f, indent=2)
+        print(f"\nResults saved to: {output_file}")
+    except IOError as e:
+        raise IOError(f"Failed to write results to {output_file}: {e}")
 
     return summary
 
@@ -262,12 +253,12 @@ if __name__ == "__main__":
 
     if args.question is not None:
         # Evaluate single question
-        dataset = _load_dataset(use_verbose=True)
+        dataset = _load_dataset()
         if args.question < 0 or args.question >= len(dataset):
-            print(f"Error: Question index {args.question} out of range (0-{len(dataset)-1})")
-        else:
-            result = evaluate_single_question(dataset[args.question], args.question)
-            print(f"\nResult: {'✓ Correct' if result['correct'] else '✗ Incorrect'}")
+            raise ValueError(f"Question index {args.question} out of range (0-{len(dataset)-1})")
+
+        result = evaluate_single_question(dataset[args.question], args.question)
+        print(f"\nResult: {'✓ Correct' if result['correct'] else '✗ Incorrect'}")
     else:
         # Evaluate all questions
         evaluate_all(output_file=args.output)

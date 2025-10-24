@@ -1,13 +1,13 @@
 """
 This file is where you will implement your agent.
-The `run_agent` function is used to evaluate your agent's performance.
+The `root_agent` is used to evaluate your agent's performance.
 """
 
-from google.adk.agents.llm_agent import Agent
-from .tools.web_search import web_search
+from google.adk.agents import llm_agent
+from my_agent.tools import web_search
 
-root_agent = Agent(
-    model='gemini-2.5-flash',
+root_agent = llm_agent.Agent(
+    model='gemini-2.5-flash-lite',
     name='agent',
     description="A helpful assistant that can answer questions.",
     instruction="You are a helpful assistant that answers questions directly and concisely.",
