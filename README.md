@@ -10,6 +10,95 @@ Welcome! This repository contains everything you need to build and evaluate an A
   <img src="assets/agent.webp" alt="Agent Illustration" height="144">
 </p>
 
+## 🎯 The Challenge
+
+### The Story
+
+*"In the era of ChatGPT, clients have ever growing expectations of AI systems. They expect every question to be answered — instantly, flawlessly, and magically. From "Which came first — the chicken or the egg?" to "ChatGPT, can you solve my project?" — they want answers, now.*
+
+*Unfortunately, although modern AI models can already generate impressive outputs, they still lack the **tools and capabilities to solve the most complex questions** some of our clients have.*
+
+*Throughout the years, we have compiled these difficult questions into a dataset to evaluate our internal AI systems. But after years of development, we still have not been able to create a system that satisfies our most critical customers. So today, we are asking for your help!*
+
+*Your challenge is to leverage an AI agent, augmenting their capabilities through the right design, tool use, prompting, and coordination — to find the correct answers to a wide range of complex questions that require multi-step reasoning and digging through files. From history to science, from video interpretation to riddles — **your system should think, not just predict**."*
+
+### What You Need to Build
+
+**An AI agent that can interpret questions (and possibly files) and return accurate answers.**
+
+The questions require your agent to:
+- Autonomously extract information from files
+- Search the web for relevant information
+- Reason about information step-by-step
+- Handle multiple topics and modalities (text, images, PDFs, etc.)
+
+**What is an Agent?**
+
+An [agent](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) is an LLM in a loop with the ability to invoke tools (Python functions - which in turn can invoke APIs) and use the output of these tools in the next loop iteration.
+
+This challenge will help you get hands-on experience with building agents and custom tools. Throughout the day, questions of increasing difficulty will be released sequentially - covering different topics, modalities, and durations to test your agent's **accuracy** and **speed**.
+
+### Deliverables
+
+**1. Technical Deliverable**
+- Working AI agent code in this repository
+- Code must be readable and well-structured
+- The agent code MUST be the same as the one used in your demo
+
+**2. Presentation (Short & Functional)**
+
+Your presentation should have two sections:
+
+**Section One: Demo & Insights**
+- Show your agent in action
+- Share key learnings and insights from development
+- Discuss interesting technical challenges you solved
+
+**Section Two: Real-World Application**
+- Demonstrate a potential business application
+- Showcase ROI and measurable business value
+- Present how the agent delivers impact in a realistic context
+
+⚠️ **Important**: Keep the presentation clear and accessible. **Points will be deducted if it is too technical**.
+
+### About ML6
+
+ML6 is a frontier, international AI engineering company, constantly pushing the boundaries of what's possible with AI. We partner with bold leaders to turn cutting-edge AI into lasting business impact. With over a decade of proven expertise, we deliver AI that reshapes business models. AI that is reliable and secure, ensuring a lasting impact. From strategy to delivery, we don't just follow the hype—we build the future.
+
+### Judging Criteria
+
+| **Criteria** | **Weight** | **Guiding Questions** |
+|-------------|-----------|----------------------|
+| Agent Answer Accuracy | 60% | Was the answer given by your agent the same as the ground truth answer in our test set? (not the leaderboard score which is the train set) |
+| Agent Answer Speed | 10% | What was the average time required to generate an answer for all questions? |
+| Presentation Section One | 10% | Did we clearly see the agent in action? Did we receive interesting insights and learnings? |
+| Presentation Section Two | 20% | Did we clearly see the potential and value of the agent for an original use case? |
+
+**Scoring System:**
+
+We use a **100-point system** divided across these criteria and teams.
+
+The **weight** represents the total points available for that criterion. Points are distributed among teams based on performance:
+- **Highest-performing team**: 25% of the category's points
+- **Second team**: 15%
+- **Third team**: 10%
+- **Fourth team**: 8%
+- **Fifth team**: 6%
+- **All other teams**: Equally share the remaining points
+
+**The team with the most total points wins!**
+
+### Submission Format
+
+**Code Submission:**
+- Push your code to this GitHub repository
+- Keep code readable and well-documented
+- **Deadline**: Last commit before the specified deadline will be evaluated
+
+**Presentation Submission:**
+- Share a link to your Google Slides presentation
+- Presentation must include: Intro, Section One (demo), and Section Two (business case)
+- **Grant access** to `cas.coopman@ml6.eu` for the slide deck AND any referenced files (videos, etc.)
 
 ## What You'll Be Working On
 
@@ -264,9 +353,14 @@ lsof -ti:8000 | xargs kill -9
 - **ADK Samples**: https://github.com/google/adk-samples - Working examples for inspiration
 - **Gemini API Docs**: https://ai.google.dev/docs - Reference for Gemini models
 
+### Agent Design & Best Practices
+
+- **Building Effective Agents**: https://www.anthropic.com/engineering/building-effective-agents - Anthropic's guide on agent design patterns and workflows
+- **Writing Tools for Agents**: https://www.anthropic.com/engineering/writing-tools-for-agents - Best practices for creating effective agent tools
+
 ### Getting Help
 
-- **Documentation**: Almost everyrthing you need can be found in the official ADK docs linked above
+- **Documentation**: Almost everything you need can be found in the official ADK docs linked above
 - **Other Issues**: Feel free to reach out to one of the ML6 ML Engineers walking around
 
 Good luck building your agent! 🚀
