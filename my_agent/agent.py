@@ -12,4 +12,5 @@ root_agent = llm_agent.Agent(
     description="A helpful assistant that can answer questions.",
     instruction="You are a helpful assistant that answers questions directly and concisely.",
     tools=[web_search],
+    sub_agents=[],
 )
