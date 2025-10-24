@@ -1,6 +1,6 @@
 """
 This file will be used to evaluate the performance of your agent.
-Make sure to set the API key in the .env file. See README.md for more details.
+Make sure to set the API key in the `my_agent/.env` file. See `README.md` for more details.
 """
 import argparse
 import datetime
@@ -31,9 +31,12 @@ else:
     print("Warning: GEMINI_API_KEY not set. LLM judge will not be available.")
 
 
+DATASET_PATH = "benchmark/validation.json"
+ATTACHMENTS_FOLDER_PATH = "benchmark/attachments"
+
 def _load_dataset():
     """Load the validation dataset."""
-    dataset_path = "benchmark/validation.json"
+    dataset_path = DATASET_PATH
 
     try:
         with open(dataset_path, "r") as f:
@@ -127,7 +130,7 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
         # Handle comma-separated file names
         files = [f.strip() for f in file_name.split(",") if f.strip()]
         if files:
-            file_paths = [f"validation_sets/attachments/{f}" for f in files]
+            file_paths = [f"{ATTACHMENTS_FOLDER_PATH}/{f}" for f in files]
 
     print(f"\n{'='*80}")
     print(f"Question {question_idx + 1}")

@@ -282,7 +282,7 @@ uv sync
 
 **API key issues:**
 - Make sure you copied `.local_env` to `.env` in the `my_agent/` folder
-- Verify the key is valid at https://aistudio.google.com/app/apikey
+- Verify the key variable has been sets
 
 **Port already in use:**
 ```bash
