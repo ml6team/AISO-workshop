@@ -1,0 +1,12 @@
+[project]
+name = "GDG-Hackathon-ML6-Agent"
+version = "0.1.0"
+description = "This repository holds the scaffolding and dummy agent for the GDGxML6 Hackathon."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "google-adk",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+]

@@ -1,4 +1,0 @@
-google-adk
-pandas
-matplotlib
-seaborn
