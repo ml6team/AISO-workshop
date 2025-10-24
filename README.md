@@ -29,8 +29,8 @@ This is where you'll spend most of your time:
 ### 1. Prerequisites
 
 You'll need:
-- Python 3.12 or higher
-- A Google API key ([Get one here](https://aistudio.google.com/app/apikey))
+- Python 3.9 or higher
+- A Google API key (We will provide one)
 
 ### 2. Install uv (Python package manager)
 
@@ -265,7 +265,7 @@ lsof -ti:8000 | xargs kill -9
 
 ### Getting Help
 
-- **Python & ADK Issues**: Ask your instructors or TAs
-- **Documentation**: Everything you need can be found in the official ADK docs linked above
+- **Documentation**: Almost everyrthing you need can be found in the official ADK docs linked above
+- **Other Issues**: Feel free to reach out to on of our colleagues walking around
 
 Good luck building your agent!
