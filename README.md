@@ -12,8 +12,6 @@ Welcome! This repository contains everything you need to build and evaluate an A
 
 ## 🎯 The Challenge
 
-### The Story
-
 *"In the era of ChatGPT, clients have ever growing expectations of AI systems. They expect every question to be answered — instantly, flawlessly, and magically. From "Which came first — the chicken or the egg?" to "ChatGPT, can you solve my project?" — they want answers, now.*
 
 *Unfortunately, although modern AI models can already generate impressive outputs, they still lack the **tools and capabilities to solve the most complex questions** some of our clients have.*
@@ -38,6 +36,7 @@ An [agent](https://cdn.openai.com/business-guides-and-resources/a-practical-guid
 
 This challenge will help you get hands-on experience with building agents and custom tools. Throughout the day, questions of increasing difficulty will be released sequentially - covering different topics, modalities, and durations to test your agent's **accuracy** and **speed**.
 
+
 ### Deliverables
 
 **1. Technical Deliverable**
@@ -61,18 +60,16 @@ Your presentation should have two sections:
 
 ⚠️ **Important**: Keep the presentation clear and accessible. **Points will be deducted if it is too technical**.
 
-### About ML6
-
-ML6 is a frontier, international AI engineering company, constantly pushing the boundaries of what's possible with AI. We partner with bold leaders to turn cutting-edge AI into lasting business impact. With over a decade of proven expertise, we deliver AI that reshapes business models. AI that is reliable and secure, ensuring a lasting impact. From strategy to delivery, we don't just follow the hype—we build the future.
-
 ### Judging Criteria
 
 | **Criteria** | **Weight** | **Guiding Questions** |
 |-------------|-----------|----------------------|
-| Agent Answer Accuracy | 60% | Was the answer given by your agent the same as the ground truth answer in our test set? (not the leaderboard score which is the train set) |
+| Agent Answer Accuracy | 60% | Was the answer given by your agent the same as the ground truth answer in our **hidden test set**? |
 | Agent Answer Speed | 10% | What was the average time required to generate an answer for all questions? |
 | Presentation Section One | 10% | Did we clearly see the agent in action? Did we receive interesting insights and learnings? |
 | Presentation Section Two | 20% | Did we clearly see the potential and value of the agent for an original use case? |
+
+⚠️ **Important Note on Accuracy**: Your final accuracy score will be evaluated on a **hidden test set** that you don't have access to. This test set contains the same types of questions as your training set, but ensures fair evaluation. Use the training set (`benchmark/train.json`) to develop your agent, but avoid overfitting to it!
 
 **Scoring System:**
 
@@ -214,6 +211,8 @@ Results include:
 - Agent responses and expected answers
 - Evaluation method used (string match or LLM judge)
 
+💡 **Tip**: This evaluation runs on the **training set** (`benchmark/validation.json`). Your final score will be based on a hidden test set with similar questions, so focus on building a robust, generalizable agent rather than memorizing answers!
+
 ## How to Build Your Agent
 
 ### 1. Basic Agent Configuration
@@ -316,11 +315,10 @@ gdg-hackathon-prep/
 │   ├── agent.py          # ← Define your agent here
 │   ├── tools/            # ← Add custom tools here
 │   │   ├── web_search.py # Example tool
-│   │   └── __init__.py
 │   ├── .local_env        # Example environment file
 │   └── .env              # Your API key (create this!)
 ├── scripts/              # Scaffolding (don't modify)
-│   └── agent.py          # Agent runner infrastructure
+│   └── server.py         # Agent runner infrastructure
 ├── benchmark/            # Train dataset (read-only)
 │   ├── attachments/      # Files to answer some questions
 ├── evaluate.py           # Evaluation script
@@ -364,3 +362,8 @@ lsof -ti:8000 | xargs kill -9
 - **Other Issues**: Feel free to reach out to one of the ML6 ML Engineers walking around
 
 Good luck building your agent! 🚀
+
+
+### About ML6
+
+ML6 is a frontier, international AI engineering company, constantly pushing the boundaries of what's possible with AI. We partner with bold leaders to turn cutting-edge AI into lasting business impact. With over a decade of proven expertise, we deliver AI that reshapes business models. AI that is reliable and secure, ensuring a lasting impact. From strategy to delivery, we don't just follow the hype—we build the future.
