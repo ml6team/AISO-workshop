@@ -190,10 +190,10 @@ That's it! You're ready to start developing.
 Use the ADK web interface to test and debug your agent interactively:
 
 ```bash
-adk web
+uv run adk web
 ```
 
-Then open http://127.0.0.1:8000 in your browser. This gives you:
+Then open <http://127.0.0.1:8000> in your browser. This gives you:
 
 - Live chat interface to test your agent
 - Session history to review conversations
@@ -301,7 +301,7 @@ root_agent = llm_agent.Agent(
 ### 3. Tips for Success
 
 - **Start simple**: Get a basic agent working first, then add complexity
-- **Test frequently**: Use `adk web` to interactively test changes
+- **Test frequently**: Use `uv run adk web` to interactively test changes
 - **Read the docs**: Everything you need to know about using the ADK can be found in the [official ADK documentation](https://google.github.io/adk-docs/)
 - **Check out examples**: Browse the [ADK samples repository](https://github.com/google/adk-samples) for inspiration and working examples
 - **Understand the dataset**: Look at questions in `benchmark/train.json` to understand what your agent needs to handle (some have attachments)
@@ -314,7 +314,7 @@ If you want to see your evaluation runs in the web interface:
 1. **First, start the web UI:**
 
    ```bash
-   adk web
+   uv run adk web
    ```
 2. **Then run evaluations in a separate terminal:**
 
@@ -375,14 +375,14 @@ lsof -ti:8000 | xargs kill -9
 
 ### Official Documentation & Examples
 
-- **ADK Documentation**: https://google.github.io/adk-docs/ - Complete guide on how to use the ADK
-- **ADK Samples**: https://github.com/google/adk-samples - Working examples for inspiration
-- **Gemini API Docs**: https://ai.google.dev/docs - Reference for Gemini models
+- **ADK Documentation**: <https://google.github.io/adk-docs/> - Complete guide on how to use the ADK
+- **ADK Samples**: <https://github.com/google/adk-samples> - Working examples for inspiration
+- **Gemini API Docs**: <https://ai.google.dev/docs> - Reference for Gemini models
 
 ### Agent Design & Best Practices
 
-- **Building Effective Agents**: https://www.anthropic.com/engineering/building-effective-agents - Anthropic's guide on agent design patterns and workflows
-- **Writing Tools for Agents**: https://www.anthropic.com/engineering/writing-tools-for-agents - Best practices for creating effective agent tools
+- **Building Effective Agents**: <https://www.anthropic.com/engineering/building-effective-agents> - Anthropic's guide on agent design patterns and workflows
+- **Writing Tools for Agents**: <https://www.anthropic.com/engineering/writing-tools-for-agents> - Best practices for creating effective agent tools
 
 ### Getting Help
 
