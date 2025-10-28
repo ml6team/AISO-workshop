@@ -65,12 +65,12 @@ Your presentation should have two sections:
 
 ### Judging Criteria
 
-| **Criteria**       | **Weight** | **Guiding Questions**                                                                             |
-| ------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------- |
-| Agent Answer Accuracy    | 60%              | Was the answer given by your agent the same as the ground truth answer in our**hidden test set**? |
-| Agent Answer Speed       | 10%              | What was the average time required to generate an answer for all questions?                             |
-| Presentation Section One | 10%              | Did we clearly see the agent in action? Did we receive interesting insights and learnings?              |
-| Presentation Section Two | 20%              | Did we clearly see the potential and value of the agent for an original use case?                       |
+| **Criteria**       | **Weight** | **Guiding Questions**                                                                               |
+| ------------------------ | ---------------- | --------------------------------------------------------------------------------------------------------- |
+| Agent Answer Accuracy    | 60%              | Was the answer given by your agent the same as the ground truth answer in our **hidden test set**? |
+| Agent Answer Speed       | 10%              | What was the average time required to generate an answer for all questions?                               |
+| Presentation Section One | 10%              | Did we clearly see the agent in action? Did we receive interesting insights and learnings?                |
+| Presentation Section Two | 20%              | Did we clearly see the potential and value of the agent for an original use case?                         |
 
 ⚠️ **Important Note on Accuracy**: Your final accuracy score will be evaluated on a **hidden test set** that you don't have access to. This test set contains the same types of questions as your training set, but ensures fair evaluation. Use the training set (`benchmark/train.json`) to develop your agent, but avoid overfitting to it!
 
@@ -193,7 +193,7 @@ Use the ADK web interface to test and debug your agent interactively:
 uv run adk web
 ```
 
-Then open <http://127.0.0.1:8000> in your browser. This gives you:
+Then open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. This gives you:
 
 - Live chat interface to test your agent
 - Session history to review conversations
@@ -375,14 +375,14 @@ lsof -ti:8000 | xargs kill -9
 
 ### Official Documentation & Examples
 
-- **ADK Documentation**: <https://google.github.io/adk-docs/> - Complete guide on how to use the ADK
-- **ADK Samples**: <https://github.com/google/adk-samples> - Working examples for inspiration
-- **Gemini API Docs**: <https://ai.google.dev/docs> - Reference for Gemini models
+- **ADK Documentation**: [https://google.github.io/adk-docs/](https://google.github.io/adk-docs/) - Complete guide on how to use the ADK
+- **ADK Samples**: [https://github.com/google/adk-samples](https://github.com/google/adk-samples) - Working examples for inspiration
+- **Gemini API Docs**: [https://ai.google.dev/docs](https://ai.google.dev/docs) - Reference for Gemini models
 
 ### Agent Design & Best Practices
 
-- **Building Effective Agents**: <https://www.anthropic.com/engineering/building-effective-agents> - Anthropic's guide on agent design patterns and workflows
-- **Writing Tools for Agents**: <https://www.anthropic.com/engineering/writing-tools-for-agents> - Best practices for creating effective agent tools
+- **Building Effective Agents**: [https://www.anthropic.com/engineering/building-effective-agents](https://www.anthropic.com/engineering/building-effective-agents) - Anthropic's guide on agent design patterns and workflows
+- **Writing Tools for Agents**: [https://www.anthropic.com/engineering/writing-tools-for-agents](https://www.anthropic.com/engineering/writing-tools-for-agents) - Best practices for creating effective agent tools
 
 ### Getting Help
 
