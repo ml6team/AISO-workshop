@@ -1,0 +1,520 @@
+[
+  {
+    "task_id": "2d83110e-a098-4ebb-9987-066c06fa42d0",
+    "Question": ".rewsna eht sa \"tfel\" drow eht fo etisoppo eht etirw ,ecnetnes siht dnatsrednu uoy fI",
+    "Level": 1,
+    "Final answer": "Right",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Read the instructions in reverse",
+      "Number of steps": "1",
+      "How long did this take?": "1 minute",
+      "Tools": "1. A word reversal tool / script",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "1f975693-876d-457b-a649-393859e79bf3",
+    "Question": "Hi, I was out sick from my classes on Friday, so I'm trying to figure out what I need to study for my Calculus mid-term next week. My friend from class sent me an audio recording of Professor Willowbrook giving out the recommended reading for the test, but my headphones are broken :(\n\nCould you please listen to the recording for me and tell me the page numbers I'm supposed to go over? I've attached a file called Homework.mp3 that has the recording. Please provide just the page numbers as a comma-delimited list. And please provide the list in ascending order.",
+    "Level": 1,
+    "Final answer": "132, 133, 134, 197, 245",
+    "file_name": "36.mp3",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Load the file supplied by my user.\nStep 2: Using audio processing tools, convert the text of the audio file to speech:\n\n\"Before you all go, I want to remind you that the midterm is next week. Here's a little hint; you should be familiar with the differential equations on page 245, problems that are very similar to problems 32, 33, and 44 from that page might be on the test. And also some of you might want to brush up on the last page in the integration section, page 197. I know some of you struggled on last week's quiz. I foresee problem 22 from page 197 being on your midterm. Oh, and don't forget to brush up on the section on related rates, on pages 132, 133, and 134.\"\n\nStep 3: Evaluate the converted audio, recording each instance of page numbers: 245, 197, 197, 132, 133, 134\nStep 4: Sort the page numbers in ascending order, omitting duplicates, and store this list as the correct answer to my user's request: 132, 133, 134, 197, 245\nStep 5: Report the correct response to my user: \"132, 133, 134, 197, 245\"",
+      "Number of steps": "5",
+      "How long did this take?": "2 minutes",
+      "Tools": "1. A file interface\n2. A speech-to-text audio processing tool",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "99c9cc74-fdc8-46c6-8f8d-3ce2d3bfeea3",
+    "Question": "Hi, I'm making a pie but I could use some help with my shopping list. I have everything I need for the crust, but I'm not sure about the filling. I got the recipe from my friend Aditi, but she left it as a voice memo and the speaker on my phone is buzzing so I can't quite make out what she's saying. Could you please listen to the recipe and list all of the ingredients that my friend described? I only want the ingredients for the filling, as I have everything I need to make my favorite pie crust. I've attached the recipe as Strawberry pie.mp3.\n\nIn your response, please only list the ingredients, not any measurements. So if the recipe calls for \"a pinch of salt\" or \"two cups of ripe strawberries\" the ingredients on the list would be \"salt\" and \"ripe strawberries\".\n\nPlease format your response as a comma separated list of ingredients. Also, please alphabetize the ingredients.",
+    "Level": 1,
+    "Final answer": "cornstarch, freshly squeezed lemon juice, granulated sugar, pure vanilla extract, ripe strawberries",
+    "file_name": "26.mp3",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Load the file supplied to me by my user.\nStep 2: Using speech-to-text tools, convert the audio file to plain text and store it for the candidate word list:\n\n\"In a saucepan, combine ripe strawberries, granulated sugar, freshly squeezed lemon juice, and cornstarch. Cook the mixture over medium heat, stirring constantly, until it thickens to a smooth consistency. Remove from heat and stir in a dash of pure vanilla extract. Allow the strawberry pie filling to cool before using it as a delicious and fruity filling for your pie crust.\"\n\nStep 3: Evaluate the candidate word list and process it, stripping each ingredient encountered to a provisional response list:\n\nripe strawberries\ngranulated sugar\nfreshly squeezed lemon juice\ncornstarch\npure vanilla extract\n\nStep 4: Alphabetize the list of ingredients as requested by my user to create a finalized response:\n\ncornstarch\nfreshly squeezed lemon juice\ngranulated sugar\npure vanilla extract\nripe strawberries\n\nStep 5: Report the correct response to my user:\n\n\"cornstarch\nfreshly squeezed lemon juice\ngranulated sugar\npure vanilla extract\nripe strawberries\"",
+      "Number of steps": "5",
+      "How long did this take?": "3 minutes",
+      "Tools": "1. A file interface\n2. A speech-to-text tool",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "8e867cd7-cff9-4e6c-867a-ff5ddc2550be",
+    "Question": "How many studio albums were published by Mercedes Sosa between 2000 and 2009 (included)? You can use the latest 2022 version of english wikipedia.",
+    "Level": 1,
+    "Final answer": "3",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. I did a search for Mercedes Sosa\n2. I went to the Wikipedia page for her\n3. I scrolled down to \"Studio albums\"\n4. I counted the ones between 2000 and 2009",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. web browser\n2. google search",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "4fc2f1ae-8625-45b5-ab34-ad4433bc21f8",
+    "Question": "Who nominated the only Featured Article on English Wikipedia about a dinosaur that was promoted in November 2016?",
+    "Level": 1,
+    "Final answer": "FunkMonk",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search \"Wikipedia featured articles promoted in november 2016\"\n2. Click through to the appropriate page and find the person who nominated Giganotosaurus.",
+      "Number of steps": "2",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. web browser\n2. search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "6f37996b-2ac7-44b0-8e68-6d28256631b4",
+    "Question": "Given this table defining * on the set S = {a, b, c, d, e}\n\n|*|a|b|c|d|e|\n|---|---|---|---|---|---|\n|a|a|b|c|b|d|\n|b|b|c|a|e|c|\n|c|c|a|b|b|a|\n|d|b|e|b|e|d|\n|e|d|b|a|d|c|\n\nprovide the subset of S involved in any possible counter-examples that prove * is not commutative. Provide your answer as a comma separated list of the elements in the set in alphabetical order.",
+    "Level": 1,
+    "Final answer": "b, e",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Compile the markdown.\n2. Look at the table across the diagonal to see if any portions are not symmetrical.\n3. See that b * e != e * b, but all others are symmetrical.",
+      "Number of steps": "3",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Markdown",
+      "Number of tools": "1"
+    }
+  },
+  {
+    "task_id": "a3fbeb63-0e8c-4a11-bff6-0e3b484c3e9c",
+    "Question": "How many slides in this PowerPoint presentation mention crustaceans?",
+    "Level": 1,
+    "Final answer": "4",
+    "file_name": "19.pptx",
+    "Annotator Metadata": {
+      "Steps": "1. Open the provided file.\n2. Scroll through the presentation, noting the animal names on each slide.\n3. Search the web for “crayfish” to verify that they are crustaceans.\n4. Read the results, noting that they are crustaceans.\n5. Search the web for “isopods” to verify whether they are crustaceans.\n6. Read the results, noting that they are.\n7. Since I’m confident that I know whether all of the other animals are crustaceans, I count the ones that are to get the answer, 4.",
+      "Number of steps": "7",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. PowerPoint viewer",
+      "Number of tools": "1"
+    }
+  },
+  {
+    "task_id": "cabe07ed-9eca-40ea-8ead-410ef5e83f91",
+    "Question": "What is the surname of the equine veterinarian mentioned in 1.E Exercises from the chemistry materials licensed by Marisa Alviar-Agnew & Henry Agnew under the CK-12 license in LibreText's Introductory Chemistry materials as compiled 08/21/2023?",
+    "Level": 1,
+    "Final answer": "Louvrier",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search for \"1.E Exercises LibreText Introductory Chemistry\"\n2. Read to see the horse doctor mentioned.",
+      "Number of steps": "2",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "3cef3a44-215e-4aed-8e3b-b1e3f08063b7",
+    "Question": "I'm making a grocery list for my mom, but she's a professor of botany and she's a real stickler when it comes to categorizing things. I need to add different foods to different categories on the grocery list, but if I make a mistake, she won't buy anything inserted in the wrong category. Here's the list I have so far:\n\nmilk, eggs, flour, whole bean coffee, Oreos, sweet potatoes, fresh basil, plums, green beans, rice, corn, bell pepper, whole allspice, acorns, broccoli, celery, zucchini, lettuce, peanuts\n\nI need to make headings for the fruits and vegetables. Could you please create a list of just the vegetables from my list? If you could do that, then I can figure out how to categorize the rest of the list into the appropriate categories. But remember that my mom is a real stickler, so make sure that no botanical fruits end up on the vegetable list, or she won't get them when she's at the store. Please alphabetize the list of vegetables, and place each item in a comma separated list.",
+    "Level": 1,
+    "Final answer": "broccoli, celery, fresh basil, lettuce, sweet potatoes",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Evaluate the list provided by my user, eliminating objects which are neither fruits nor vegetables:\nsweet potatoes, fresh basil, plums, green beans, rice, corn, bell pepper, whole allspice, acorns, broccoli, celery, zucchini, lettuce, peanuts\nStep 2: Remove all items from the list which are botanical fruits, leaving a list of vegetables:\nsweet potatoes, fresh basil, broccoli, celery, lettuce\nStep 3: Alphabetize the remaining list as requested by my user:\nbroccoli, celery, fresh basil, lettuce, sweet potatoes\nStep 4: Provide the correct response in the requested format:\n\"broccoli\ncelery\nfresh basil\nlettuce\nsweet potatoes\"",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "No tools required",
+      "Number of tools": "0"
+    }
+  },
+  {
+    "task_id": "d0633230-7067-47a9-9dbf-ee11e0a2cdd6",
+    "Question": "In the Scikit-Learn July 2017 changelog, what other predictor base command received a bug fix? Just give the name, not a path.",
+    "Level": 1,
+    "Final answer": "BaseLabelPropagation",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"Scikit-Learn July 2017 changelog\" on Google.\n2. Opened \"Release History\" from the Scikit-Learn website.\n3. Clicked \"Other versions\" in the upper left.\n4. Opened the links, starting from the bottom, until one was found that included the \"July 2017\" changelog under the News.\n5. Looked for the \"Bug fixes\" section.\n6. Looked under \"Other predictors\" in that section.",
+      "Number of steps": "6",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "3f57289b-8c60-48be-bd80-01f8099ca449",
+    "Question": "How many at bats did the Yankee with the most walks in the 1977 regular season have that same season?",
+    "Level": 1,
+    "Final answer": "519",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search \"yankee stats\" to find their MLB stats page.\n2. Set the data to the 1977 regular season.\n3. Sort to find the most walks.\n4. See how many at bats the player had.",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. web browser\n2. search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "23dd907f-1261-4488-b21c-e9185af91d5e",
+    "Question": "In Audre Lorde’s poem “Father Son and Holy Ghost”, what is the number of the stanza in which some lines are indented?",
+    "Level": 1,
+    "Final answer": "2",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “Audre Lorde Father Son and Holy Ghost”.\n2. Click on Poetry Foundation result.\n3. Note the stanza that appears to have lines indented, the second one.\n4. Return to search results to confirm.\n5. Click on second result.\n6. Confirm that the indentation appears in the second stanza here as well.",
+      "Number of steps": "6",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "840bfca7-4f7b-481a-8794-c560c340185d",
+    "Question": "On June 6, 2023, an article by Carolyn Collins Petersen was published in Universe Today. This article mentions a team that produced a paper about their observations, linked at the bottom of the article. Find this paper. Under what NASA award number was the work performed by R. G. Arendt supported by?",
+    "Level": 1,
+    "Final answer": "80GSFC21M0002",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Google \"June 6, 2023 Carolyn Collins Petersen Universe Today\"\n2. Find the relevant link to the scientific paper and follow that link\n3. Open the PDF. \n4. Search for NASA award number",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Access to academic journal websites",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "bda648d7-d618-4883-88f4-3466eabd860e",
+    "Question": "Where were the Vietnamese specimens described by Kuznetzov in Nedoshivina's 2010 paper eventually deposited? Just give me the city name without abbreviations.",
+    "Level": 1,
+    "Final answer": "Saint Petersburg",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search \"Kuznetzov Nedoshivina 2010\"\n2. Find the 2010 paper \"A catalogue of type specimens of the Tortricidae described by V. I. Kuznetzov from Vietnam and deposited in the Zoological Institute, St. Petersburg\"",
+      "Number of steps": "2",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. search engine",
+      "Number of tools": "1"
+    }
+  },
+  {
+    "task_id": "a0c07678-e491-4bbc-8f0b-07405144218f",
+    "Question": "Who are the pitchers with the number before and after Taishō Tamai's number as of July 2023? Give them to me in the form Pitcher Before, Pitcher After, use their last names only, in Roman characters.",
+    "Level": 1,
+    "Final answer": "Yoshida, Uehara",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Look up Taishō Tamai on Wikipedia\n2. See the pitcher with the number 18 (before) is Kōsei Yoshida and number 20 (after) is Kenta Uehara",
+      "Number of steps": "2",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Wikipedia",
+      "Number of tools": "1"
+    }
+  },
+  {
+    "task_id": "5188369a-3bbe-43d8-8b94-11558f909a08",
+    "Question": "What writer is quoted by Merriam-Webster for the Word of the Day from June 27, 2022?",
+    "Level": 1,
+    "Final answer": "Annie Levin",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search \"merriam-webster word of the day\" on Google search.\n2. Opened the top \"Word of the Day\" result from the Merriam-Webster dictionary online.\n3. Clicked \"SEE ALL WORDS OF THE DAY\" at the bottom.\n4. Scrolled down to June 27, 2022.\n5. Opened the Word of the Day (\"jingoism\").\n6. Scrolled down and identified context quote for \"jingoism\".\n7. Noted the name attributed to the quote. ",
+      "Number of steps": "7",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Audio capability",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "c365c1c7-a3db-4d5e-a9a1-66f56eae7865",
+    "Question": "Of the cities within the United States where U.S. presidents were born, which two are the farthest apart from the westernmost to the easternmost going east, giving the city names only? Give them to me in alphabetical order, in a comma-separated list",
+    "Level": 1,
+    "Final answer": "Braintree, Honolulu",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"cities where us presidents are born\" on Google.\n2. Opened \"List of presidents of the United States by home state\" on Wikipedia.\n3. Searched the eastern cities to find the easternmost one (Braintree, MA).\n4. Checked the westernmost city (Honolulu, HI).",
+      "Number of steps": "4",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "a0068077-79f4-461a-adfe-75c1a4148545",
+    "Question": "What was the actual enrollment count of the clinical trial on H. pylori in acne vulgaris patients from Jan-May 2018 as listed on the NIH website?",
+    "Level": 1,
+    "Final answer": "90",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"nih\" on Google search.\n2. Clicked the top link to nih.gov.\n3. Searched \"h pylori acne\" in the search box.\n4. Clicked \"More\" and selected \"Clinical Trials\".\n5. Clicked the result about H. Pylori and acne.\n6. Checked the date to confirm it was January to May 2018.\n7. Opened \"Tabular View\".\n8. Scrolled down to Actual Enrollment and recorded the number.",
+      "Number of steps": "8",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "08cae58d-4084-4616-b6dd-dd6534e4825b",
+    "Question": "According to Google Finance, when was the first year the Apple stock went above $50 (without adjusting for stock split)?",
+    "Level": 2,
+    "Final answer": "2018",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. typed in \"Google finance apple\" on browser\n2. clicked first link\n3. clicked \"max\" to display entire history of apple stock\n4. hovered mouse around the area that line crosses over $50\n5. noted the date",
+      "Number of steps": "5",
+      "How long did this take?": "4 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. code/data analysis tools",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "ad37a656-079a-49f9-a493-7b739c9167d1",
+    "Question": "On July 15, 2008, Phys.org published an article about a catastrophe. Find the explosive force of this catastrophe according to Encyclopedia Britannica, then find the name of the US nuclear test that had the same yield. Your answer should only be the last word of the name of the test.",
+    "Level": 2,
+    "Final answer": "Bravo",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search for \"phys org archive\"\n2. Click on the link for https://phys.org/archive\n3. Naviage to July 15, 2008\n4. Search the articles for an article that mentions \"catastrophe\"\n5. Note the name of the event (Tunguska catastrophe)\n6. Search for \"Tunguska catastrophe britannica\"\n7. Click on the link for Tunguska event\n8. Locate the explosive force in the article (15 megatons)\n9. Search for \"us nuclear test 15 megatons\"\n10. Record the last word of the name of the test in the search results.",
+      "Number of steps": "10",
+      "How long did this take?": "4 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "17b5a6a3-bc87-42e8-b0fb-6ab0781ef2cc",
+    "Question": "I’m researching species that became invasive after people who kept them as pets released them. There’s a certain species of fish that was popularized as a pet by being the main character of the movie Finding Nemo. According to the USGS, where was this fish found as a nonnative species, before the year 2020? I need the answer formatted as the five-digit zip codes of the places the species was found, separated by commas if there is more than one place.",
+    "Level": 2,
+    "Final answer": "34689",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “finding nemo main character”.\n2. Note the results, which state that the main character is a clownfish.\n3. Search the web for “usgs nonnative species database”.\n4. Click result for the Nonindigenous Aquatic Species site.\n5. Click “Marine Fishes”.\n6. Click “Species List of Nonindigenous Marine Fish”.\n7. Scroll through the list until I find the clown anenomefish, and click “Collection info”.\n8. Note the place that a clown anenomefish was found, in Fred Howard Park at the Gulf of Mexico.\n9. Search the web for “fred howard park florida zip code”.\n10. Note the zip code, 34689. Since only one clownfish was found before the year 2020, this is the answer.",
+      "Number of steps": "10",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "87c610df-bef7-4932-b950-1d83ef4e282b",
+    "Question": "In April of 1977, who was the Prime Minister of the first place mentioned by name in the Book of Esther (in the New International Version)?",
+    "Level": 2,
+    "Final answer": "Morarji Desai",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “Book of Esther NIV”.\n2. Click search result to read the text of the first chapter.\n3. Note the first place named, India.\n4. Search the web for “prime ministers of India list”.\n5. Click Wikipedia result.\n6. Scroll down to find the prime minister during the specified timeframe, Morarji Desai.",
+      "Number of steps": "6",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "e4e91f1c-1dcd-439e-9fdd-cb976f5293fd",
+    "Question": "I need to fact-check a citation. This is the citation from the bibliography:\n\nGreetham, David. \"Uncoupled: OR, How I Lost My Author(s).\" Textual Cultures: Texts, Contexts, Interpretation, vol. 3 no. 1, 2008, p. 45-46. Project MUSE, doi:10.2979/tex.2008.3.1.44.\n\nAnd this is the in-line citation:\n\nOur relationship with the authors of the works we read can often be “obscured not by a \"cloak of print\" but by the veil of scribal confusion and mis-transmission” (Greetham 45-46).\n\nDoes the quoted text match what is actually in the article? If Yes, answer Yes, otherwise, give me the word in my citation that does not match with the correct one (without any article).",
+    "Level": 2,
+    "Final answer": "cloak",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “greetham uncoupled project muse”.\n2. Click result, an article that matches the given citation.\n3. Ctrl-F for “obscured”.\n4. Find the quote from the question, which describes a “veil of print”, not a cloak.\n5. Express the answer in the specified format, No.",
+      "Number of steps": "5",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "56137764-b4e0-45b8-9c52-1866420c3df5",
+    "Question": "Which contributor to the version of OpenCV where support was added for the Mask-RCNN model has the same name as a former Chinese head of government when the names are transliterated to the Latin alphabet?",
+    "Level": 2,
+    "Final answer": "Li Peng",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Use search engine to search for \"OpenCV change log\".\n2. Open the top result from GitHub and search the page for \"Mask-RCNN\".\n3. Observe that support for Mask-RCNN model was added in OpenCV version 4.0.0.\n4. Expand the two lists of contributors for version 4.0.0.\n5. Go to the Wikipedia page for head of government. \n6. Scan through and note that for China, the head of government is the premier.\n7. Go to the Wikipedia page for premier of the People's Republic of China.\n8. Go to the linked page for List of premiers of the People's Republic of China.\n9. Compare the list of OpenCV version 4.0.0 contributors' names and the list of premiers of China to find that Li Peng is present in both lists.",
+      "Number of steps": "9",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "33d8ea3b-6c6b-4ff1-803d-7e270dea8a57",
+    "Question": "What is the minimum number of page links a person must click on to go from the english Wikipedia page on The Lord of the Rings (the book) to the english Wikipedia page on A Song of Ice and Fire (the book series)? In your count, include each link you would click on to get to the page. Use the pages as they appeared at the end of the day on July 3, 2023.",
+    "Level": 2,
+    "Final answer": "2",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “lord of the rings wikipedia”.\n2. Click on Wikipedia result.\n3. Click “View history” to see if the page has been edited since July 3, 2023.\n4. Since it hasn’t been, return to the current revision.\n5. Ctrl-F for “song” to see if A Song of Ice and Fire is linked to on this page.\n6. Not seeing A Song of Ice and Fire on the current page, search for a link to a page that will likely mention A Song of Ice and Fire.\n7. Click the link for “High fantasy”.\n8. Click “View history” to see if the page has been edited since July 3, 2023.\n9. Since it hasn’t been, return to the current revision.\n10. Ctrl-F for “song”, and find a link to A Song of Ice and Fire.\n11. Count the links: the High fantasy page and the A Song of Ice and Fire page make two.",
+      "Number of steps": "11",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser\n3. Counter",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "05407167-39ec-4d3a-a234-73a9120c325d",
+    "Question": "In the 2018 VSCode blog post on replit.com, what was the command they clicked on in the last video to remove extra lines?",
+    "Level": 2,
+    "Final answer": "Format Document",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Opened replit.com.\n2. Clicked \"Blog\".\n3. Searched \"vscode\".\n4. Opened \"Zero Setup VSCode Intelligence\" from 2018.\n5. Scrolled down to the bottom video.\n6. Noted the command used (Format Document).",
+      "Number of steps": "6",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. GIF parsing tools",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "2b3ef98c-cc05-450b-a719-711aee40ac65",
+    "Question": "Could you help me out with this assignment? Our professor sprung it on us at the end of class Friday, and I'm still trying to figure it out. The question he asked us was about an anagram. I've attached an audio recording of the question that he asked, so if you could please take a listen and give me the answer, I'd really appreciate the help. Please limit your response to the anagram text that could be generated from the original line which fulfills the professor's request, without any other commentary. Also, please don't include any punctuation in your response.",
+    "Level": 2,
+    "Final answer": "To be or not to be that is the question whether tis nobler in the mind to suffer the slings and arrows of outrageous fortune",
+    "file_name": "8.mp3",
+    "Annotator Metadata": {
+      "Steps": "Step 1: Load the audio file my user submitted with the query\nStep 2: Using speech-to-text tools, convert the audio to plain text, and store the text for evaluation:\n\n\"Okay guys before we call it for the week I've got one little bonus assignment. The following quotation is actually an anagram of one of the bard's most well known lines. I'd like you all to think about it and anyone who can provide the original line will get an automatic A on next week's quiz. Here's the anagram. In one of the bard's best thought of tragedies our insistent hero Hamlet queries on two fronts about how life turns rotten.\"\n\nStep 3: Evaluate the transcribed text for relevant information:\nThe transcribed text references \"the bard\" twice\nThe text contains the anagram to solve: \"In one of the bard's best thought of tragedies our insistent hero Hamlet queries on two fronts about how life turns rotten\"\nThe decoded text resolves as a well-known line of \"the bard\"\n\nStep 4: Using a web browser, access a search engine and conduct a search, \"who is the bard\"\nStep 5: Navigate to the first search result, https://www.vocabulary.com/dictionary/bard\nStep 6: Evaluate the page content, noting that the page identifies William Shakespeare as \"The Bard\"\nStep 7: Navigate to a search engine and conduct a search, \"William Shakespeare, In one of the bard's best thought of tragedies our insistent hero Hamlet queries on two fronts about how life turns rotten\"\nStep 8: Navigate to the first search result, https://www.chem.ucla.edu/~ltfang/humors/anagram.html\nStep 9: Evaluate the page content, noting that the page identifies the anagram of \"In one of the bard's best thought of tragedies our insistent hero Hamlet queries on two fronts about how life turns rotten\" as \"To be or not to be: that is the question, whether tis nobler in the mind to suffer the slings and arrows of outrageous fortune\"\nStep 10: Compare the information provided by the website resource to the original text, to determine if the original text and the candidate solution share the same letters. As this is the case, store this anagram as a candidate solution.\nStep 11: Navigate to a search engine and conduct a search, \"William Shakespeare, To be or not to be: that is the question, whether tis nobler in the mind to suffer the slings and arrows of outrageous fortune\"\nStep 12: Navigate to the first search result, https://poets.org/poem/hamlet-act-iii-scene-i-be-or-not-be\nStep 13: Evaluate the page content, learning that the phrase \"To be or not to be: that is the question, whether tis nobler in the mind to suffer the slings and arrows of outrageous fortune\" is a line from William Shakespeare's play Hamlet, which corresponds with both the clue provided by the professor in the initial text and the clue provided in the anagrammed text.\nStep 14: Confirming the accuracy of the surfaced result, provide the correct response to my user, formatted as requested, \"To be or not to be that is the question whether tis nobler in the mind to suffer the slings and arrows of outrageous fortune\"",
+      "Number of steps": "14",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. A web browser\n2. A search engine\n3. A speech-to-text tool",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "6b078778-0b90-464d-83f6-59511c811b01",
+    "Question": "The Metropolitan Museum of Art has a portrait in its collection with an accession number of 29.100.5. Of the consecrators and co-consecrators of this portrait's subject as a bishop, what is the name of the one who never became pope?",
+    "Level": 2,
+    "Final answer": "Alfonso Visconti",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. I searched for \"Metropolitan Museum of Art search collection\" using a search engine to get to the \"Search the Collection\" page on the Metropolitan Museum of Art's website.\n2. I selected \"Accession Number\" in the search field dropdown and entered \"29.100.5\" into the text input, noting that the only result is a portrait titled \"Cardinal Fernando Niño de Guevara (1541–1609)\"\n3. I went to Fernando Niño de Guevara's Wikipedia page and noted that he was consecrated bishop by Pope Clement VIII with Camillo Borghese and Alfonso Visconti as co-consecrators.\n4. I eliminated Pope Clement VIII as the answer since he was obviously a pope based on his title.\n5. I went to Camillo Borghese's Wikipedia page and noted that he became Pope Paul V, eliminating him as the answer.\n6. I went to Alfonso Visconti's Wikipedia page and noted that he never became pope, so the answer to the question is \"Alfonso Visconti\".",
+      "Number of steps": "6",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "48eb8242-1099-4c26-95d4-ef22b002457a",
+    "Question": "How many nonindigenous crocodiles were found in Florida from the year 2000 through 2020? You can get the data from the USGS Nonindigenous Aquatic Species database.",
+    "Level": 2,
+    "Final answer": "6",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “usgs nonnative aquatic species database”.\n2. Navigate to the database of reptiles.\n3. For each species called a “crocodile”, click Collection Info.\n4. Count instances where a crocodile was found in both Florida and in the specified date range.",
+      "Number of steps": "4",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "ded28325-3447-4c56-860f-e497d6fb3577",
+    "Question": "This is a secret message my friend gave me. It says where we should meet for our picnic on Friday. The only problem is, it’s encrypted in the Caesar cipher, so I can’t read it. Can you tell me what it says? This is the message:\n\nZsmxsm sc sx Zyvilsec Zvkjk.",
+    "Level": 2,
+    "Final answer": "Picnic is in Ploybius Plaza.",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “Caesar cipher decrypt”.\n2. Click on top result, a decoding website.\n3. Enter the message into the text box.\n4. Click “DECRYPT (BRUTEFORCE)” to get all possible decryptions.\n5. Scroll through the results, noting that one possibility matches the user’s scenario of having a picnic.",
+      "Number of steps": "5",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "d700d50d-c707-4dca-90dc-4528cddd0c80",
+    "Question": "Who composed the song that was performed by a rooster and a hamster in separate animated videos at separate tempos with different lyrics? Answer using the format First name Last name.",
+    "Level": 2,
+    "Final answer": "Roger Miller",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"song performed by rooster and hamster\" on Google.\n2. Opened https://en.wikipedia.org/wiki/The_Hampsterdance_Song.\n3. Noted the song \"Whistle Stop\" was the original to use the tune.\n4. Followed the link to https://en.wikipedia.org/wiki/Robin_Hood_(1973_film).\n5. Found the composer of \"Whistle Stop\".",
+      "Number of steps": "5",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "f2feb6a4-363c-4c09-a804-0db564eafd68",
+    "Question": "I’m thinking about selling my home, so I want to learn more about how homes in my area sold recently. I live in Pearl City, Hawaii, which is on the island of Oahu. I know two homes near me that sold in 2022 were 2072 Akaikai Loop, and 2017 Komo Mai Drive. Find which of those homes sold for more in 2022, and tell me how much it sold for. Don’t put commas or decimal places in the answer.",
+    "Level": 2,
+    "Final answer": "900000",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Search the web for “2072 akaikai loop pearl city hi”.\n2. Click Zillow result.\n3. Navigate to “Price and tax history”.\n4. Find the amount the house sold for when it was sold in 2022: $860,000.\n5. Search the web for “2017 komo mai drive pearl city hi”.\n6. Click Zillow result.\n7. Navigate to “Price and tax history”.\n8. Find the amount the house sold for when it was sold in 2022: $900,000.\n9. Express the higher amount in the specified format, $900000.",
+      "Number of steps": "9",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Search engine\n2. Web browser",
+      "Number of tools": "2"
+    }
+  },
+  {
+    "task_id": "20194330-9976-4043-8632-f8485c6c71b2",
+    "Question": "The YouTube channel Game Grumps began a Let’s Play of the game Sonic the Hedgehog (2006) in the year 2012. Thirty seconds into the first episode, a phrase is shown on the screen in white letters on a red background. How many times does the letter \"E\" appear in this phrase?",
+    "Level": 2,
+    "Final answer": "4",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Look up \"Game grumps sonic 2006 playthrough\".\n2. Click on the first result and verify that it matches the parameters from the question.\n3. Scrub to the thirty-second mark in the video.\n4. Note the letters in white on the red background.\n5. Count the letter \"E\"'s in the phrase.",
+      "Number of steps": "5",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. YouTube player\n3. Color recognition\n4. OCR",
+      "Number of tools": "4"
+    }
+  },
+  {
+    "task_id": "a56f1527-3abf-41d6-91f8-7296d6336c3f",
+    "Question": "The cover of the August 2021 issue of Vogue shows a famous landmark in the background behind some trees. How tall is this monument in yards, rounded to the nearest yard? Give the number only.",
+    "Level": 2,
+    "Final answer": "185",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Use search engine to search for \"Vogue August 2021 cover\".\n2. Find the result from Vogue's archive for the August 2021 issue and go to the webpage.\n3. Identify the monument in the cover image as the Washington Monument.\n4. Go to the Wikipedia page for the Washington Monument.\n5. In the infobox, note that the height is 555 ft. \n6. Convert 555 ft to yards using a conversion factor of 1 yd / 3 ft: 555 ft * 1 yd / 3 ft = 185 yd, giving a final answer of 185.",
+      "Number of steps": "6",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Web browser\n2. Search engine\n3. Image recognition tools\n4. Calculator",
+      "Number of tools": "4"
+    }
+  },
+  {
+    "task_id": "b2c257e0-3ad7-4f05-b8e3-d9da973be36e",
+    "Question": "If this whole pint is made up of ice cream, how many percent above or below the US federal standards for butterfat content is it when using the standards as reported by Wikipedia in 2020? Answer as + or - a number rounded to one decimal place.",
+    "Level": 2,
+    "Final answer": "+4.6",
+    "file_name": "37.jpg",
+    "Annotator Metadata": {
+      "Steps": "1. Open the image.\n2. Search \"butterfat wikipedia\" on Google search.\n3. Open the Butterfat Wikipedia page.\n4. Click \"View history\" on the page.\n5. Scroll down to the end of 2020 and click the last 2020 version of the page.\n6. Check the ice cream requirement for fat content (10%).\n7. Click \"View history\" on the page.\n8. Scroll down to the beginning of 2020 and click the last 2019 version of the page.\n9. Check the ice cream requirement for fat content to ensure it's the same (10%).\n10. Calculate the fat percentage of the pint of ice cream from the image of the nutrition panel (21g fat per serving / 144g ice cream per serving = 14.6%).\n11. Calculate the difference from the standard (14.6% - 10% = 4.6%).",
+      "Number of steps": "11",
+      "How long did this take?": "5 minutes",
+      "Tools": "1. Image recognition tools\n2. Calculator\n3. Web browser\n4. Search engine",
+      "Number of tools": "4"
+    }
+  },
+  {
+    "task_id": "708b99c5-e4a7-49cb-a5cf-933c8d46470d",
+    "Question": "On the DeepFruits fruit detection graph on Connected Papers from 2016, what feature caused the largest bubble to be the size it is?",
+    "Level": 2,
+    "Final answer": "Citations",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"connected papers deepfruits\" on Google search.\n2. Opened the \"DeepFruits: A Fruit Detection System Using Deep Neural Networks\" graph on ConnectedPapers.com.\n3. Clicked on the largest bubble (Redmon, 2015).\n4. Clicked on other bubbles to compare their features.\n5. Noted that Citations was the feature where the Redmon bubble exceeded all the others.",
+      "Number of steps": "5",
+      "How long did this take?": "7 minutes",
+      "Tools": "1. Graph interaction tools\n2. Web browser\n3. Search engine",
+      "Number of tools": "3"
+    }
+  },
+  {
+    "task_id": "50f58759-7bd6-406f-9b0d-5692beb2a926",
+    "Question": "How many times was a Twitter/X post cited as a reference on the english Wikipedia pages for each day of August in the last June 2023 versions of the pages?",
+    "Level": 3,
+    "Final answer": "3",
+    "file_name": "",
+    "Annotator Metadata": {
+      "Steps": "1. Searched \"August Wikipedia\" on Google search.\n2. Opened the Wikipedia page for the month of August.\n3. Clicked on \"View history\" on the \"August 1\" page.\n4. Went back to the last edited version prior to July 2023.\n5. Checked the references for Twitter posts.\n6. Repeated the process for each day of August.\n7. Counted the Twitter posts found.",
+      "Number of steps": "7",
+      "How long did this take?": "8 minutes",
+      "Tools": "1. Web browser\n2. Search engine",
+      "Number of tools": "2"
+    }
+  }
+]

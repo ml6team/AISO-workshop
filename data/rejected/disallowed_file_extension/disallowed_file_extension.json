@@ -1,0 +1,96 @@
+{
+    "dataset": [
+        {
+            "question": "Each cell in the attached spreadsheet represents a plot of land. The color of the cell indicates who owns that plot. Green cells are plots owned by Earl Smith. Can Earl walk through every plot he owns (and no other plots) and return to his starting plot without backtracking? For this question, consider backtracking to be any instance where Earl would enter a plot of land he had already entered since leaving his starting plot.",
+            "answer": "No"
+        },
+        {
+            "question": "You are given this Excel file as a map. You start on the START cell and move toward the END cell. You are allowed to move two cells per turn, and you may move up, down, left, or right. You may not move fewer than two cells, and you may not move backward. You must avoid moving onto any blue cells. On the eleventh turn, what is the 6-digit hex code (without prefix) of the color of the cell where you land after moving?",
+            "answer": "F478A7"
+        },
+        {
+            "question": "The attached Excel file contains the sales of menu items for a local fast-food chain. What were the total sales that the chain made from food (not including drinks)? Express your answer in USD with two decimal places.",
+            "answer": "89706.00"
+        },
+        {
+            "question": "You are a telecommunications engineer who wants to build cell phone towers on a stretch of road. In the reference file is a layout of the road and nearby houses. Each dash, \"-\", is a marker indicating a mile. Each capital H indicates a house located next to a mile marker, appearing above or below the stretch of road. Each cell phone tower can cover houses located next to the road within a 4-mile radius. Find the minimum number of cell phone towers needed to cover all houses next to the road. Your answer should be a positive numerical integer value.",
+            "answer": "3"
+        },
+        {
+            "question": "What is the final numeric output from the attached Python code?",
+            "answer": "0"
+        },
+        {
+            "question": "The attached spreadsheet shows the inventory for a movie and video game rental store in Seattle, Washington. What is the title of the oldest Blu-Ray recorded in this spreadsheet? Return it as appearing in the spreadsheet.",
+            "answer": "Time-Parking 2: Parallel Universe"
+        },
+        {
+            "question": "The attached file shows a list of books in the collection of Scribe County Public Library. How many of the library’s books that are authored by Rick Riordan are not currently on the library’s shelves?",
+            "answer": "7"
+        },
+        {
+            "question": "The attached file contains a list of vendors in the Liminal Springs mall, along with each vendor’s monthly revenue and the rent they pay the mall. I want you to find the vendor that makes the least money, relative to the rent it pays. Then, tell me what is listed in the “type” column for that vendor.",
+            "answer": "Finance"
+        },
+        {
+            "question": "The attached file lists accommodations in the resort town of Seahorse Island. Based on the information in this file, which seems like the better available place to stay for a family that enjoys swimming and wants a full house?",
+            "answer": "Shelley's place"
+        },
+        {
+            "question": "The attached spreadsheet contains the sales of menu items for a regional fast-food chain. Which city had the greater total sales: Wharvton or Algrimand?",
+            "answer": "Wharvton"
+        },
+        {
+            "question": "The attached PDF lists accommodations in the resort community of Seahorse Island. Which type of accommodation has a higher average rating in Seahorse Island?",
+            "answer": "Hotels"
+        },
+        {
+            "question": "This spreadsheet contains a list of clients for a retractable awning company. Each client has ordered a new awning for the back of their house within the last 90 days. The company makes different designs depending on whether the awning is made to block sunrises or sunsets. In this region, houses with odd-numbered street addresses face east, and houses with even-numbered street addresses face west. How many of these clients will be receiving the sunset awning design?",
+            "answer": "8"
+        },
+        {
+            "question": "The attached spreadsheet lists the locomotives owned by a local railroad museum. What is the typical American name for the type of locomotive this museum uses for the Murder Mystery Express?",
+            "answer": "Berkshire"
+        },
+        {
+            "question": "The attached file lists the locomotives owned by a local railroad museum. It gives each locomotive’s identifying number, operating status, and the name of the daily excursion it heads, if operational. What are the odds that today’s Sunset Picnic Trip will use a steam locomotive? Assume that each day’s excursion picks one of its assigned locomotives at random, and express the answer in the form “1 in 4”, “1 in 5”, etc.",
+            "answer": "1 in 3"
+        },
+        {
+            "question": "How many applicants for the job in the PDF are only missing a single qualification?",
+            "answer": "17"
+        },
+        {
+            "question": "The attached file shows the locomotives in the collection of a North American railroad museum. How many wheels do the listed steam locomotives have in total?",
+            "answer": "60"
+        },
+        {
+            "question": "Using the Biopython library in Python, parse the PDB file of the protein identified by the PDB ID 5wb7 from the RCSB Protein Data Bank. Calculate the distance between the first and second atoms as they are listed in the PDB file. Report the answer in Angstroms, rounded to the nearest picometer.",
+            "answer": "1.456"
+        },
+        {
+            "question": "What is the average number of pre-2020 works on the open researcher and contributor identification pages of the people whose identification is in this file?",
+            "answer": "26.4"
+        },
+        {
+            "question": "Which of the text elements under CATEGORIES in the XML would contain the one food in the spreadsheet that does not appear a second time under a different name?",
+            "answer": "Soups and Stews"
+        },
+        {
+            "question": "What percentage of the total penguin population according to the upper estimates on english Wikipedia at the end of 2012 is made up by the penguins in this file that don't live on Dream Island or have beaks longer than 42mm? Round to the nearest five decimal places.",
+            "answer": "0.00033"
+        },
+        {
+            "question": "The attached spreadsheet contains a list of books I read in the year 2022. What is the title of the book that I read the slowest, using the rate of words per day?",
+            "answer": "Out of the Silent Planet"
+        },
+        {
+            "question": "In the NIH translation of the original 1913 Michaelis-Menten Paper, what is the velocity of a reaction to four decimal places using the final equation in the paper based on the information for Reaction 7 in the Excel file?",
+            "answer": "0.0424"
+        },
+        {
+            "question": "I was referencing each of the tables in the file from papers that were cited by the \"Trans fatty acid contents in chocolates and chocolate wafers in Turkey\" paper. I lost my own reference sheet and need to know which of the papers each table came from. The file may not use the full table caption. If the references in the\"Trans fatty acid\" paper bibliography were numbered starting with 1, give me the numbers in the order that they would be used to fill the cells in the Excel file from top to bottom, as a comma separated list.",
+            "answer": "8, 29, 22, 1, 8, 26"
+        }
+    ]
+}
