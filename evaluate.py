@@ -8,6 +8,7 @@ import datetime
 import json
 import os
 import pathlib
+import time
 
 import dotenv
 import pydantic
@@ -164,9 +165,14 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
     # Run the agent (using USER_ID env var if set, otherwise default "dev_user")
     user_id = os.getenv("USER_ID", "dev_user")
     try:
+        start_time = time.time()
         agent_response = server.run_agent(question, file_paths, user_id=user_id)
+        end_time = time.time()
+        response_time = end_time - start_time
+
         print(f"\n{Fore.WHITE}Agent Response:{Style.RESET_ALL} {agent_response}")
         print(f"{Fore.YELLOW}Expected Answer:{Style.RESET_ALL} {expected_answer}")
+        print(f"{Fore.MAGENTA}Response Time:{Style.RESET_ALL} {response_time:.2f}s")
     except Exception as e:
         print(f"{Fore.RED}Error running agent: {e}{Style.RESET_ALL}")
         raise e
@@ -183,6 +189,7 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
             "agent_response": agent_response,
             "correct": True,
             "method": "string_match",
+            "response_time": response_time,
         }
 
     # Fall back to LLM judge
@@ -201,6 +208,7 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
         "agent_response": agent_response,
         "correct": is_correct,
         "method": "llm_judge",
+        "response_time": response_time,
     }
 
 
@@ -235,6 +243,14 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
     # Calculate accuracy
     accuracy = (correct_count / total_count) * 100 if total_count > 0 else 0
 
+    # Calculate timing statistics
+    response_times = [r["response_time"] for r in results]
+    avg_response_time = sum(response_times) / len(response_times) if response_times else 0
+
+    # Calculate metrics for correct answers only
+    correct_response_times = [r["response_time"] for r in results if r["correct"]]
+    avg_correct_response_time = sum(correct_response_times) / len(correct_response_times) if correct_response_times else 0
+
     # Prepare summary
     summary = {
         "timestamp": datetime.datetime.now().isoformat(),
@@ -242,17 +258,25 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
         "correct": correct_count,
         "incorrect": total_count - correct_count,
         "accuracy": round(accuracy, 2),
+        "timing": {
+            "average_response_time": round(avg_response_time, 2),
+            "average_correct_response_time": round(avg_correct_response_time, 2),
+        },
         "results": results,
     }
 
     # Print summary
     print(f"\n{Fore.CYAN}{Style.BRIGHT}{'=' * 80}")
-    print(f"EVALUATION SUMMARY")
+    print("EVALUATION SUMMARY")
     print(f"{'=' * 80}{Style.RESET_ALL}")
+    print(f"\n{Fore.WHITE}{Style.BRIGHT}Correctness Metrics:{Style.RESET_ALL}")
     print(f"{Fore.WHITE}Total Questions:{Style.RESET_ALL} {total_count}")
     print(f"{Fore.GREEN}Correct:{Style.RESET_ALL} {correct_count}")
     print(f"{Fore.RED}Incorrect:{Style.RESET_ALL} {total_count - correct_count}")
     print(f"{Fore.CYAN}{Style.BRIGHT}Accuracy:{Style.RESET_ALL} {accuracy:.2f}%")
+    print(f"\n{Fore.WHITE}{Style.BRIGHT}Timing Metrics:{Style.RESET_ALL}")
+    print(f"{Fore.MAGENTA}Average Response Time (All):{Style.RESET_ALL} {avg_response_time:.2f}s")
+    print(f"{Fore.GREEN}Average Response Time (Correct Only):{Style.RESET_ALL} {avg_correct_response_time:.2f}s")
     print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}")
 
     # Save results to file
@@ -299,6 +323,8 @@ if __name__ == "__main__":
             print(f"\n{Fore.GREEN}{Style.BRIGHT}Result: ✓ Correct{Style.RESET_ALL}")
         else:
             print(f"\n{Fore.RED}{Style.BRIGHT}Result: ✗ Incorrect{Style.RESET_ALL}")
+
+        print(f"{Fore.MAGENTA}Response Time:{Style.RESET_ALL} {result['response_time']:.2f}s")
     else:
         # Evaluate all questions
         evaluate_all(output_file=args.output)
