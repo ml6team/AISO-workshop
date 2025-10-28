@@ -12,7 +12,7 @@ import pathlib
 import dotenv
 import pydantic
 from google import genai
-from colorama import Fore, Back, Style, init
+from colorama import Fore, Style, init
 import pyfiglet
 
 from utils import server
@@ -47,12 +47,12 @@ def print_banner():
     banner = pyfiglet.figlet_format("ML6", font="slant")
     # Orange color using ANSI 256-color code
     orange = "\033[38;5;208m"
-    print(f"{orange}{Style.BRIGHT}{banner}{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}")
+    print(f"\n{orange}{Style.BRIGHT}{banner}{Style.RESET_ALL}")
+    print(f"{orange}{'=' * 80}{Style.RESET_ALL}")
     print(
-        f"{Fore.CYAN}{Style.BRIGHT}GDG Hackathon - Agent Evaluation System{Style.RESET_ALL}"
+        f"{orange}{Style.BRIGHT}GDG Hackathon - Agent Evaluation System{Style.RESET_ALL}"
     )
-    print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}\n")
+    print(f"{orange}{'=' * 80}{Style.RESET_ALL}\n")
 
 
 def _load_dataset():
