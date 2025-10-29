@@ -144,7 +144,7 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
     else:  # simple format
         question = question_data["question"]
         expected_answer = question_data["answer"]
-        file_name = ""
+        file_name = question_data.get("file_name", "")
 
     # Prepare file paths if files are provided
     file_paths = None
