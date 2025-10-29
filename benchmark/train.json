@@ -45,6 +45,26 @@
             "answer": "Shelley's place",
             "file_name": "15.pdf"
 
+        },
+        {
+            "question": "The book with the doi 10.1353/book.24372 concerns a certain neurologist. According to chapter 2 of the book, what author influenced this neurologist's belief in "endopsychic myths"? Give the last name only.",
+            "answer": "Kleinpaul"
+        },
+        {
+            "question": "In the film Goldfinger, what color was the object that James Bond concealed himself and his companion Pussy Galore at the end of the film? If there are multiple colors, put them in a comma-separated list in alphabetical order.",
+            "answer": "orange, white"
+        },
+        {
+            "question": "What country had the least number of athletes at the 1928 Summer Olympics? If there's a tie for a number of athletes, return the first in alphabetical order. Give the IOC country code as your answer.",
+            "answer": "CUB"
+        },
+        {
+            "question": "How many pages if the 2023 IPCC report (85 pages version) mentions nuclear energy?",
+            "answer": "0"
+        },
+        {
+            "question": "The work referenced in footnote 397 of Federico Lauria's 2014 dissertation is also the source for the titles of two paintings in the Smithsonian American Art Museum's collection, as of August 2023. What is the absolute difference between the chapter numbers of the chapters that the titles of these two paintings quote?",
+            "answer": "8"
         }
     ]
 }
