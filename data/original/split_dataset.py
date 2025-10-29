@@ -142,20 +142,20 @@ def has_allowed_tools(tools_text: str, num_tools: int | None) -> bool:
     )
 
 
-def should_keep_record(record: Dict) -> bool:
-    """Filter records based on global filtering parameters."""
+def get_rejection_reason(record: Dict) -> str | None:
+    """Return the rejection reason for a record, or None if kept."""
     annot_meta = record.get("Annotator Metadata", {})
 
     # Check file extension
     file_name = record.get("file_name", "")
     if not is_allowed_file_extension(file_name):
-        return False
+        return "disallowed_file_extension"
 
     # Check time limit
     time_text = str(annot_meta.get("How long did this take?", "")).strip()
     time_minutes = extract_time_minutes(time_text)
     if time_minutes is not None and time_minutes >= MAX_TIME_MINUTES:
-        return False
+        return "time_too_long"
 
     # Check tools
     tools_text = str(annot_meta.get("Tools", "")).strip()
@@ -163,9 +163,14 @@ def should_keep_record(record: Dict) -> bool:
         str(annot_meta.get("Number of tools", "")).strip()
     )
     if not has_allowed_tools(tools_text, num_tools):
-        return False
+        return "tools_violation"
 
-    return True
+    return None
+
+
+def should_keep_record(record: Dict) -> bool:
+    """Filter records based on global filtering parameters."""
+    return get_rejection_reason(record) is None
 
 
 def sort_records_by_complexity(records: List[Dict]) -> List[Dict]:
@@ -299,7 +304,10 @@ def compute_cost(
 
 
 def assign_splits(
-    records: List[Dict], features: List[Dict[str, str]], ratio: float, seed: int
+    records: List[Dict],
+    features: List[Dict[str, str]],
+    ratio: float,
+    seed: int,
 ) -> Tuple[List[Dict], List[Dict]]:
     total = len(records)
     desired_val_total = round(total * ratio)
@@ -371,12 +379,15 @@ def write_validation_json(path: Path, records: List[Dict]) -> None:
 
 
 def copy_attachments(
-    records: List[Dict], target_dir: Path, source_attachments_dir: Path
+    records: List[Dict],
+    target_dir: Path,
+    source_attachments_dir: Path,
 ) -> None:
     """Copy attachment files referenced in records to target directory's attachements folder."""
     if not source_attachments_dir.exists():
         print(
-            f"Warning: Attachments directory not found: {source_attachments_dir}"
+            f"Warning: Attachments directory not found: "
+            f"{source_attachments_dir}"
         )
         return
 
@@ -396,14 +407,16 @@ def copy_attachments(
             shutil.copy2(source_file, target_file)
             copied_files.add(file_name)
             print(
-                f"Copied attachment: {file_name} -> {target_dir.name}/attachements/"
+                f"Copied attachment: {file_name} -> "
+                f"{target_dir.name}/attachements/"
             )
         elif not source_file.exists():
             print(f"Warning: Attachment file not found: {file_name}")
 
     if copied_files:
         print(
-            f"Total attachments copied to {target_dir.name}/attachements/: {len(copied_files)}"
+            f"Total attachments copied to "
+            f"{target_dir.name}/attachements/: {len(copied_files)}"
         )
     else:
         print(f"No attachments needed for {target_dir.name}/")
@@ -420,13 +433,31 @@ def main() -> None:
 
     print(f"Total records loaded: {len(records)}")
 
-    # Filter records based on global parameters
-    filtered_records = [
-        record for record in records if should_keep_record(record)
-    ]
-    print(
-        f"Records after filtering: {len(filtered_records)} (removed {len(records) - len(filtered_records)})"
+    # Filter records based on global parameters and track rejections by reason
+    filtered_records = []
+    rejected_by_reason: Dict[str, List[Dict]] = {
+        "disallowed_file_extension": [],
+        "time_too_long": [],
+        "tools_violation": [],
+    }
+
+    for record in records:
+        reason = get_rejection_reason(record)
+        if reason is None:
+            filtered_records.append(record)
+        else:
+            rejected_by_reason[reason].append(record)
+
+    total_rejected = sum(
+        len(rejected) for rejected in rejected_by_reason.values()
     )
+    print(
+        f"Records after filtering: {len(filtered_records)} "
+        f"(removed {total_rejected})"
+    )
+    for reason, records in rejected_by_reason.items():
+        if records:
+            print(f"  - {reason}: {len(records)} records")
 
     if not filtered_records:
         raise SystemExit("No records remain after filtering.")
@@ -478,6 +509,41 @@ def main() -> None:
     source_attachments_dir = args.input.parent / "attachements"
     copy_attachments(val_set_sorted, val_dir, source_attachments_dir)
     copy_attachments(test_set_sorted, test_dir, source_attachments_dir)
+
+    # Write rejected records by reason
+    rejected_dir = args.output_dir / "rejected"
+    rejected_dir.mkdir(parents=True, exist_ok=True)
+
+    for reason, rejected_records in rejected_by_reason.items():
+        if not rejected_records:
+            continue
+
+        # Create directory for this rejection reason
+        reason_dir = rejected_dir / reason
+        reason_dir.mkdir(parents=True, exist_ok=True)
+
+        # Sort rejected records by complexity
+        sorted_rejected = sort_records_by_complexity(rejected_records)
+
+        # Write both simplified and verbose versions
+        rejected_json_path = reason_dir / f"{reason}.json"
+        write_validation_json(rejected_json_path, sorted_rejected)
+        print(
+            f"Rejected ({reason}) JSON written in dataset format -> "
+            f"{rejected_json_path}"
+        )
+
+        rejected_json_verbose_path = reason_dir / f"{reason}_verbose.json"
+        write_json(rejected_json_verbose_path, sorted_rejected)
+        print(
+            f"Rejected ({reason}) JSON written in verbose format -> "
+            f"{rejected_json_verbose_path}"
+        )
+
+        # Copy attachments for rejected records
+        copy_attachments(sorted_rejected, reason_dir, source_attachments_dir)
+
+        print(f"Rejected ({reason}): {len(sorted_rejected)} examples")
 
 
 if __name__ == "__main__":

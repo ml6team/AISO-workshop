@@ -19,6 +19,12 @@
         {
             "question": "Pull out the sentence in the following 5x7 block of text. Read from left to right and use all of the letters in order:\n\nTHESE\nAGULL\nGLIDE\nDPEAC\nEFULL\nYTOMY\nCHAIR",
             "answer": "The seagull glided peacefully to my chair."
+        },
+        {
+            "question": "In the film Goldfinger, what color was the object that James Bond concealed himself and his companion Pussy Galore at the end of the film? If there are multiple colors, put them in a comma-separated list in alphabetical order.",
+            "answer": "orange, white"
         }
     ]
 }
+
+

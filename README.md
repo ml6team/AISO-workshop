@@ -196,7 +196,7 @@ Use the ADK web interface to test and debug your agent interactively:
 uv run adk web
 ```
 
-Then open <http://127.0.0.1:8000> in your browser. This gives you:
+Then open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. This gives you:
 
 - Live chat interface to test your agent
 - Session history to review conversations
@@ -325,7 +325,6 @@ If you want to see your evaluation runs in the web interface:
    ```bash
    uv run adk web
    ```
-
 2. **Then run evaluations in a separate terminal:**
 
    ```bash
@@ -385,14 +384,14 @@ lsof -ti:8000 | xargs kill -9
 
 ### Official Documentation & Examples
 
-- **ADK Documentation**: <https://google.github.io/adk-docs/> - Complete guide on how to use the ADK
-- **ADK Samples**: <https://github.com/google/adk-samples> - Working examples for inspiration
-- **Gemini API Docs**: <https://ai.google.dev/docs> - Reference for Gemini models
+- **ADK Documentation**: [https://google.github.io/adk-docs/](https://google.github.io/adk-docs/) - Complete guide on how to use the ADK
+- **ADK Samples**: [https://github.com/google/adk-samples](https://github.com/google/adk-samples) - Working examples for inspiration
+- **Gemini API Docs**: [https://ai.google.dev/docs](https://ai.google.dev/docs) - Reference for Gemini models
 
 ### Agent Design & Best Practices
 
-- **Building Effective Agents**: <https://www.anthropic.com/engineering/building-effective-agents> - Anthropic's guide on agent design patterns and workflows
-- **Writing Tools for Agents**: <https://www.anthropic.com/engineering/writing-tools-for-agents> - Best practices for creating effective agent tools
+- **Building Effective Agents**: [https://www.anthropic.com/engineering/building-effective-agents](https://www.anthropic.com/engineering/building-effective-agents) - Anthropic's guide on agent design patterns and workflows
+- **Writing Tools for Agents**: [https://www.anthropic.com/engineering/writing-tools-for-agents](https://www.anthropic.com/engineering/writing-tools-for-agents) - Best practices for creating effective agent tools
 
 ### Getting Help
 
