@@ -2,23 +2,31 @@
 This file will be used to evaluate the performance of your agent.
 Make sure to set the API key in the `my_agent/.env` file. See `README.md` for more details.
 """
+
 import argparse
 import datetime
 import json
 import os
 import pathlib
+import time
 
 import dotenv
 import pydantic
 from google import genai
+from colorama import Fore, Style, init
+import pyfiglet
 
 from utils import server
+
+# Initialize colorama for cross-platform color support
+init(autoreset=True)
 
 dotenv.load_dotenv(dotenv_path=pathlib.Path("my_agent/.env"))
 
 
 class JudgeResponse(pydantic.BaseModel):
     """Pydantic model for LLM judge response."""
+
     is_correct: bool
 
 
@@ -33,6 +41,20 @@ else:
 
 DATASET_PATH = "benchmark/train.json"
 ATTACHMENTS_FOLDER_PATH = "benchmark/attachments"
+
+
+def print_banner():
+    """Print the ML6 banner."""
+    banner = pyfiglet.figlet_format("ML6", font="slant")
+    # Orange color using ANSI 256-color code
+    orange = "\033[38;5;208m"
+    print(f"\n{orange}{Style.BRIGHT}{banner}{Style.RESET_ALL}")
+    print(f"{orange}{'=' * 80}{Style.RESET_ALL}")
+    print(
+        f"{orange}{Style.BRIGHT}GDG Hackathon - Agent Evaluation System{Style.RESET_ALL}"
+    )
+    print(f"{orange}{'=' * 80}{Style.RESET_ALL}\n")
+
 
 def _load_dataset():
     """Load the train dataset."""
@@ -93,7 +115,7 @@ Be strict but fair - minor variations in wording are acceptable if the core answ
             config={
                 "response_mime_type": "application/json",
                 "response_schema": JudgeResponse,
-            }
+            },
         )
 
         result: JudgeResponse = llm_response.parsed
@@ -132,42 +154,52 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
         if files:
             file_paths = [f"{ATTACHMENTS_FOLDER_PATH}/{f}" for f in files]
 
-    print(f"\n{'='*80}")
-    print(f"Question {question_idx + 1}")
-    print(f"{'='*80}")
-    print(f"Question: {question[:100]}..." if len(question) > 100 else f"Question: {question}")
+    print(f"\n{Fore.CYAN}{'=' * 80}")
+    print(f"{Fore.CYAN}{Style.BRIGHT}Question {question_idx + 1}")
+    print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}")
+    question_display = f"{question[:100]}..." if len(question) > 100 else question
+    print(f"{Fore.BLUE}{Style.BRIGHT}Question:{Style.RESET_ALL} {question_display}")
     if file_paths:
-        print(f"Files: {file_paths}")
+        print(f"{Fore.MAGENTA}Files:{Style.RESET_ALL} {file_paths}")
 
     # Run the agent (using USER_ID env var if set, otherwise default "dev_user")
     user_id = os.getenv("USER_ID", "dev_user")
     try:
+        start_time = time.time()
         agent_response = server.run_agent(question, file_paths, user_id=user_id)
-        print(f"\nAgent Response: {agent_response}")
-        print(f"Expected Answer: {expected_answer}")
+        end_time = time.time()
+        response_time = end_time - start_time
+
+        print(f"\n{Fore.WHITE}Agent Response:{Style.RESET_ALL} {agent_response}")
+        print(f"{Fore.YELLOW}Expected Answer:{Style.RESET_ALL} {expected_answer}")
+        print(f"{Fore.MAGENTA}Response Time:{Style.RESET_ALL} {response_time:.2f}s")
     except Exception as e:
-        print(f"Error running agent: {e}")
+        print(f"{Fore.RED}Error running agent: {e}{Style.RESET_ALL}")
         raise e
 
     # First try string matching
     string_matches = string_match(agent_response, expected_answer)
 
     if string_matches:
-        print("✓ Correct (string match)")
+        print(f"{Fore.GREEN}{Style.BRIGHT}✓ Correct (string match){Style.RESET_ALL}")
         return {
             "question_idx": question_idx,
             "question": question,
             "expected_answer": expected_answer,
             "agent_response": agent_response,
             "correct": True,
-            "method": "string_match"
+            "method": "string_match",
+            "response_time": response_time,
         }
 
     # Fall back to LLM judge
-    print("\nString match failed, using LLM judge...")
+    print(f"\n{Fore.YELLOW}String match failed, using LLM judge...{Style.RESET_ALL}")
     is_correct = llm_judge(agent_response, expected_answer, question)
 
-    print(f"LLM Judge: {'✓ Correct' if is_correct else '✗ Incorrect'}")
+    if is_correct:
+        print(f"{Fore.GREEN}{Style.BRIGHT}✓ Correct (LLM judge){Style.RESET_ALL}")
+    else:
+        print(f"{Fore.RED}{Style.BRIGHT}✗ Incorrect{Style.RESET_ALL}")
 
     return {
         "question_idx": question_idx,
@@ -176,6 +208,7 @@ def evaluate_single_question(question_data: dict, question_idx: int) -> dict:
         "agent_response": agent_response,
         "correct": is_correct,
         "method": "llm_judge",
+        "response_time": response_time,
     }
 
 
@@ -186,14 +219,19 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
     Returns:
         Dict with aggregated results
     """
+    # Print the banner
+    print_banner()
+
     dataset = _load_dataset()
 
     results = []
     correct_count = 0
     total_count = len(dataset)
 
-    print(f"\nStarting evaluation of {total_count} questions...")
-    print("=" * 80)
+    print(
+        f"{Fore.CYAN}{Style.BRIGHT}Starting evaluation of {total_count} questions...{Style.RESET_ALL}"
+    )
+    print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}")
 
     for idx, question_data in enumerate(dataset):
         result = evaluate_single_question(question_data, idx)
@@ -205,6 +243,14 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
     # Calculate accuracy
     accuracy = (correct_count / total_count) * 100 if total_count > 0 else 0
 
+    # Calculate timing statistics
+    response_times = [r["response_time"] for r in results]
+    avg_response_time = sum(response_times) / len(response_times) if response_times else 0
+
+    # Calculate metrics for correct answers only
+    correct_response_times = [r["response_time"] for r in results if r["correct"]]
+    avg_correct_response_time = sum(correct_response_times) / len(correct_response_times) if correct_response_times else 0
+
     # Prepare summary
     summary = {
         "timestamp": datetime.datetime.now().isoformat(),
@@ -212,18 +258,26 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
         "correct": correct_count,
         "incorrect": total_count - correct_count,
         "accuracy": round(accuracy, 2),
-        "results": results
+        "timing": {
+            "average_response_time": round(avg_response_time, 2),
+            "average_correct_response_time": round(avg_correct_response_time, 2),
+        },
+        "results": results,
     }
 
     # Print summary
-    print(f"\n{'='*80}")
+    print(f"\n{Fore.CYAN}{Style.BRIGHT}{'=' * 80}")
     print("EVALUATION SUMMARY")
-    print(f"{'='*80}")
-    print(f"Total Questions: {total_count}")
-    print(f"Correct: {correct_count}")
-    print(f"Incorrect: {total_count - correct_count}")
-    print(f"Accuracy: {accuracy:.2f}%")
-    print(f"{'='*80}")
+    print(f"{'=' * 80}{Style.RESET_ALL}")
+    print(f"\n{Fore.WHITE}{Style.BRIGHT}Correctness Metrics:{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}Total Questions:{Style.RESET_ALL} {total_count}")
+    print(f"{Fore.GREEN}Correct:{Style.RESET_ALL} {correct_count}")
+    print(f"{Fore.RED}Incorrect:{Style.RESET_ALL} {total_count - correct_count}")
+    print(f"{Fore.CYAN}{Style.BRIGHT}Accuracy:{Style.RESET_ALL} {accuracy:.2f}%")
+    print(f"\n{Fore.WHITE}{Style.BRIGHT}Timing Metrics:{Style.RESET_ALL}")
+    print(f"{Fore.MAGENTA}Average Response Time (All):{Style.RESET_ALL} {avg_response_time:.2f}s")
+    print(f"{Fore.GREEN}Average Response Time (Correct Only):{Style.RESET_ALL} {avg_correct_response_time:.2f}s")
+    print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}")
 
     # Save results to file
     if output_file is None:
@@ -232,7 +286,7 @@ def evaluate_all(dataset_path=None, output_file=None) -> dict:
     try:
         with open(output_file, "w") as f:
             json.dump(summary, f, indent=2)
-        print(f"\nResults saved to: {output_file}")
+        print(f"\n{Fore.CYAN}Results saved to:{Style.RESET_ALL} {output_file}")
     except IOError as e:
         raise IOError(f"Failed to write results to {output_file}: {e}")
 
@@ -244,24 +298,33 @@ if __name__ == "__main__":
     parser.add_argument(
         "--question",
         type=int,
-        help="Question index to evaluate (0-based). If not provided, evaluates all questions."
+        help="Question index to evaluate (0-based). If not provided, evaluates all questions.",
     )
     parser.add_argument(
         "--output",
         type=str,
-        help="Output file path for results. Default: evaluation_results_<timestamp>.json"
+        help="Output file path for results. Default: evaluation_results_<timestamp>.json",
     )
 
     args = parser.parse_args()
 
     if args.question is not None:
         # Evaluate single question
+        print_banner()
+
         dataset = _load_dataset()
         if args.question < 0 or args.question >= len(dataset):
-            raise ValueError(f"Question index {args.question} out of range (0-{len(dataset)-1})")
+            raise ValueError(
+                f"Question index {args.question} out of range (0-{len(dataset) - 1})"
+            )
 
         result = evaluate_single_question(dataset[args.question], args.question)
-        print(f"\nResult: {'✓ Correct' if result['correct'] else '✗ Incorrect'}")
+        if result["correct"]:
+            print(f"\n{Fore.GREEN}{Style.BRIGHT}Result: ✓ Correct{Style.RESET_ALL}")
+        else:
+            print(f"\n{Fore.RED}{Style.BRIGHT}Result: ✗ Incorrect{Style.RESET_ALL}")
+
+        print(f"{Fore.MAGENTA}Response Time:{Style.RESET_ALL} {result['response_time']:.2f}s")
     else:
         # Evaluate all questions
         evaluate_all(output_file=args.output)

@@ -234,8 +234,14 @@ Results include:
 - Detailed breakdown per question
 - Agent responses and expected answers
 - Evaluation method used (string match or LLM judge)
+- **Timing metrics** - Response time for each question and overall averages
 
-💡 **Tip**: This evaluation runs on the **training set** (`benchmark/validation.json`). Your final score will be based on a hidden test set with similar questions, so focus on building a robust, generalizable agent rather than memorizing answers!
+The evaluation tracks response times and provides:
+
+- **Average Response Time (All)**: Average time across all questions
+- **Average Response Time (Correct Only)**: Average time for correctly answered questions only
+
+💡 **Tip**: This evaluation runs on the **training set** (`benchmark/train.json`). Your final score will be based on a hidden test set with similar questions, so focus on building a robust, generalizable agent rather than memorizing answers!
 
 ## How to Build Your Agent
 
