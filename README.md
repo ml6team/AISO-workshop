@@ -65,12 +65,15 @@ Your presentation should have two sections:
 
 ### Judging Criteria
 
-| **Criteria**       | **Weight** | **Guiding Questions**                                                                               |
-| ------------------------ | ---------------- | --------------------------------------------------------------------------------------------------------- |
-| Agent Answer Accuracy    | 60%              | Was the answer given by your agent the same as the ground truth answer in our **hidden test set**? |
-| Agent Answer Speed       | 10%              | What was the average time required to generate an answer for all questions?                               |
-| Presentation Section One | 10%              | Did we clearly see the agent in action? Did we receive interesting insights and learnings?                |
-| Presentation Section Two | 20%              | Did we clearly see the potential and value of the agent for an original use case?                         |
+| **Criteria** | **Weight** | **Guiding Questions** |
+|-------------|-----------|----------------------|
+| Agent Answer Accuracy | 40% | Was the answer given by your agent the same as the ground truth answer in our **hidden test set**? |
+| Agent Answer Speed | 10% | What was the average time required to generate correct answers for all questions? |
+| Presentation Section One | 20% | Did we clearly see the agent in action? Did we receive interesting insights and learnings? |
+| Presentation Section Two | 30% | Did we clearly see the potential and value of the agent for an original use case? |
+
+We will clone your repository and also evaluate the authenticity of your agent.
+To allow a smooth evaluation, make sure to properly update the python requirements if you are adding novel packages.
 
 ⚠️ **Important Note on Accuracy**: Your final accuracy score will be evaluated on a **hidden test set** that you don't have access to. This test set contains the same types of questions as your training set, but ensures fair evaluation. Use the training set (`benchmark/train.json`) to develop your agent, but avoid overfitting to it!
 
@@ -231,6 +234,12 @@ Results include:
 - Detailed breakdown per question
 - Agent responses and expected answers
 - Evaluation method used (string match or LLM judge)
+- **Timing metrics** - Response time for each question and overall averages
+
+The evaluation tracks response times and provides:
+
+- **Average Response Time (All)**: Average time across all questions
+- **Average Response Time (Correct Only)**: Average time for correctly answered questions only
 
 💡 **Tip**: This evaluation runs on the **training set** (`benchmark/train.json`). Your final score will be based on a hidden test set with similar questions, so focus on building a robust, generalizable agent rather than memorizing answers!
 
