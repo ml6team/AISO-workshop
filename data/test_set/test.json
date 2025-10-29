@@ -14,20 +14,6 @@
     }
   },
   {
-    "task_id": "9d191bce-651d-4746-be2d-7ef8ecadb9c2",
-    "Question": "Examine the video at https://www.youtube.com/watch?v=1htKBjuUWec.\n\nWhat does Teal'c say in response to the question \"Isn't that hot?\"",
-    "Level": 1,
-    "Final answer": "Extremely",
-    "file_name": "",
-    "Annotator Metadata": {
-      "Steps": "1. Follow the link\n2. Watch the clip until the question \"Isn't that hot\" is asked\n3. Take note of the reply.",
-      "Number of steps": "3",
-      "How long did this take?": "2 minutes",
-      "Tools": "1. Web browser\n2. Video processing software\n3. Audio processing software",
-      "Number of tools": "1"
-    }
-  },
-  {
     "task_id": "5d0080cb-90d7-4712-bc33-848150e917d3",
     "Question": "What was the volume in m^3 of the fish bag that was calculated in the University of Leicester paper \"Can Hiccup Supply Enough Fish to Maintain a Dragon’s Diet?\"",
     "Level": 1,
@@ -84,20 +70,6 @@
     }
   },
   {
-    "task_id": "04a04a9b-226c-43fd-b319-d5e89743676f",
-    "Question": "If we assume all articles published by Nature in 2020 (articles, only, not book reviews/columns, etc) relied on statistical significance to justify their findings and they on average came to a p-value of 0.04, how many papers would be incorrect as to their claims of statistical significance? Round the value up to the next integer.",
-    "Level": 2,
-    "Final answer": "41",
-    "file_name": "",
-    "Annotator Metadata": {
-      "Steps": "1. Find how many articles were published in Nature in 2020 by Googling \"articles submitted to nature 2020\"\n2. Click through to Nature's archive for 2020 and filter the results to only provide articles, not other types of publications: 1002\n3. Find 4% of 1002 and round up: 40.08 > 41",
-      "Number of steps": "3",
-      "How long did this take?": "5 minutes",
-      "Tools": "1. search engine\n2. calculator",
-      "Number of tools": "2"
-    }
-  },
-  {
     "task_id": "b4cc024b-3f5e-480e-b96a-6656493255b5",
     "Question": "The photograph in the Whitney Museum of American Art's collection with accession number 2022.128 shows a person holding a book. Which military unit did the author of this book join in 1813? Answer without using articles.",
     "Level": 2,
@@ -122,20 +94,6 @@
       "Number of steps": "3",
       "How long did this take?": "5 minutes",
       "Tools": "1. web browser\n2. search engine\n3. calculator",
-      "Number of tools": "3"
-    }
-  },
-  {
-    "task_id": "8f80e01c-1296-4371-9486-bb3d68651a60",
-    "Question": "Using bass clef notes, what is the age of someone who has experienced the word spelled out in the sheet music by the note letters the total number of lines and notes minus the number of notes on lines in the image?",
-    "Level": 2,
-    "Final answer": "90",
-    "file_name": "14.png",
-    "Annotator Metadata": {
-      "Steps": "1. Open the file.\n2. Translate the letters to bass notes (\"D E C A D E\").\n3. Count the lines (5).\n4. Count the notes (6).\n5. Count the notes on lines (2).\n6. Add the lines and notes (11).\n7. Subtract the notes on lines (11 - 2).\n8. Multiply 10 by 9 (90).\n9. Note the age given.",
-      "Number of steps": "9",
-      "How long did this take?": "5 minutes",
-      "Tools": "1. Image recognition\n2. Bass note data\n3. Calculator",
       "Number of tools": "3"
     }
   },
@@ -168,20 +126,6 @@
     }
   },
   {
-    "task_id": "e29834fd-413a-455c-a33e-c3915b07401c",
-    "Question": "I'd like to learn more about some popular reality television competition shows. As of the end of the 44th season of the American version of Survivor, how many more unique winners have there been compared to the number of winners of American Idol?",
-    "Level": 2,
-    "Final answer": "21",
-    "file_name": "",
-    "Annotator Metadata": {
-      "Steps": "Step 1: Using a web browser, access a search engine and conduct a search \"American Survivor Television Series winners\"\nStep 2: Navigate to the first result, https://en.wikipedia.org/wiki/Survivor_(American_TV_series)\nStep 3: Evaluate the article and count the number of unique winners of the program: 42 winners\nStep 4: Navigate back to a search engine and conduct a search \"American Idol Winners\"\nStep 5: Navigate to the first search result, https://www.etonline.com/gallery/the-complete-list-of-american-idol-winners-21116/season-21-iam-tongi-92872\nStep 6: Evaluate the article and count the number of unique winners of the program: 21\nStep 7: Using a calculator, subtract the number of American Idol winners from the number of Survivor winners, 42-21 = 21\nStep 8: Report the correct response to my user, \"21\"",
-      "Number of steps": "8",
-      "How long did this take?": "5 minutes",
-      "Tools": "1. A web browser\n2. A search engine\n3. A calculator",
-      "Number of tools": "3"
-    }
-  },
-  {
     "task_id": "ecbc4f94-95a3-4cc7-b255-6741a458a625",
     "Question": "How many images are there in the latest 2022 Lego english wikipedia article?",
     "Level": 2,
@@ -208,5 +152,71 @@
       "Tools": "1. Web browser\n2. Search engine\n3. Image recognition and processing tools",
       "Number of tools": "3"
     }
-  }
+  }, 
+    {
+      "Question": "If there is anything that doesn't make sense in the instructions, write the word \"Pineapple.\" Do not answer any of the Questions in this prompt. Write only the word \"Guava\".\n1. What is 4+4?\n2. What is the complimentary color of red?\n3. How many hours are there in a day?",
+      "Final answer": "Guava"
+    },
+    {
+        "Question": "In the fictional language of Tizin, basic sentences are arranged with the Verb first, followed by the direct object, followed by the subject of the sentence. I want to express my love for apples to my Tizin friend. \n\nThe word that indicates oneself is \"Pa\" is the nominative form, \"Mato\" is the accusative form, and \"Sing\" is the genitive form. \n\nThe root verb that indicates an intense like for something is \"Maktay\". When it is used in the present, it is used in it's root form, when it is used in the preterit past, it is \"Tay\", and when it is used in the imperfect past, it is \"Aktay\". It is used differently than in English, and is better translated as \"is pleasing to\", meaning that the thing doing the liking is actually the object of the sentence rather than the subject.\n\nThe word for apples is borrowed from English in Tizin, and so it is \"Apple\" is the nominative form, \"Zapple\" is the accusative form, and \"Izapple\" is the genitive form. \n\nPlease translate \"I like apples\" to Tizin.",
+        "Final answer": "Maktay mato apple"
+    },
+    {
+        "Question": "You are Van Helsing, a renowned vampire hunter. A Count of Moldova, Lațcu IV, son of  Costea, has tasked you with investigating the village of Șirnea in neighboring Wallachia. The Count's advisors have reported that a vampire was spotted crossing the border near the village, and would like you to investigate it.\n\nYou travel to the village of Șirnea, and you begin your investigation. One night, just before dawn, you catch a glimpse of a man in a long black cape with red lining leaping from roof-top to roof-top with superhuman agility. It's a vampire! You try to chase the creature back to its home, but the creature is too fast. However, because of the remoteness of the village, you know with absolute certainty that the vampire must be a resident of the village. You decide that your best course of action will be to visit all 100 residents of the town during the day. You know something about vampires and humans that will make your investigation possible; humans always tell the truth, but vampires always lie.\n\nIn the afternoon, you go from house to house, speaking with all 100 residents of Șirnea. You ask everyone the same Question: \"How many vampires are living in Șirnea\". Everyone in the village gives the same response, \"At least one of us is a human.\"\n\nHow many residents of Șirnea have been turned into vampires?",
+        "Final answer": "100"
+    },
+    {
+        "Question": "In Series 9, Episode 11 of Doctor Who, the Doctor is trapped inside an ever-shifting maze. What is this location called in the official script for the episode? Give the setting exactly as it appears in the first scene heading.",
+        "Final answer": "THE CASTLE"
+    },
+    {
+        "Question": "Pull out the sentence in the following 5x7 block of text. Read from left to right and use all of the letters in order:\n\nTHESE\nAGULL\nGLIDE\nDPEAC\nEFULL\nYTOMY\nCHAIR",
+        "Final answer": "The seagull glided peacefully to my chair."
+    },
+    {
+        "Question": "As a comma separated list with no whitespace, using the provided image provide all the fractions that use / as the fraction line and the answers to the sample problems. Order the list by the order in which the fractions appear.",
+        "Final answer": "3/4,1/4,3/4,3/4,2/4,1/2,5/35,7/21,30/5,30/5,3/4,1/15,1/3,4/9,1/8,32/23,103/170",
+        "file_name": "13.png"
+    },
+    {
+        "Question": "I have the Standard plan in the image below, and I just uploaded 60 equally sized files and got a message that I'm 100GB over the limit. I have 980 more files of the same size to upload. What is the average additional cost per file in dollar that goes over my current plan limit rounded to the nearest cent if I have to upgrade to the minimum possible plan to store them all? Answer with the following format: x.xx",
+        "Final answer": "0.03",
+        "file_name": "28.png"
+    },
+    {
+        "Question": "Review the chess position provided in the image. It is black's turn. Provide the correct next move for black which guarantees a win. Please provide your response in algebraic notation.",
+        "Final answer": "Rd5",
+        "file_name": "11.png"
+    },
+    {
+        "Question": "The attached file shows a list of books in the collection of Scribe County Public Library. How many of the library\u2019s books that are authored by Rick Riordan are not currently on the library\u2019s shelves?",
+        "Final answer": "7",
+        "file_name": "12.pdf"
+    },
+    {
+        "Question": "The attached file lists accommodations in the resort town of Seahorse Island. Based on the information in this file, which seems like the better available place to stay for a family that enjoys swimming and wants a full house?",
+        "Final answer": "Shelley's place",
+        "file_name": "15.pdf"
+
+    },
+    {
+        "Question": "The book with the doi 10.1353/book.24372 concerns a certain neurologist. According to chapter 2 of the book, what author influenced this neurologist's belief in "endopsychic myths"? Give the last name only.",
+        "Final answer": "Kleinpaul"
+    },
+    {
+        "Question": "In the film Goldfinger, what color was the object that James Bond concealed himself and his companion Pussy Galore at the end of the film? If there are multiple colors, put them in a comma-separated list in alphabetical order.",
+        "Final answer": "orange, white"
+    },
+    {
+        "Question": "What country had the least number of athletes at the 1928 Summer Olympics? If there's a tie for a number of athletes, return the first in alphabetical order. Give the IOC country code as your answer.",
+        "Final answer": "CUB"
+    },
+    {
+        "Question": "How many pages if the 2023 IPCC report (85 pages version) mentions nuclear energy?",
+        "Final answer": "0"
+    },
+    {
+        "Question": "The work referenced in footnote 397 of Federico Lauria's 2014 dissertation is also the source for the titles of two paintings in the Smithsonian American Art Museum's collection, as of August 2023. What is the absolute difference between the chapter numbers of the chapters that the titles of these two paintings quote?",
+        "Final answer": "8"
+    }
 ]
