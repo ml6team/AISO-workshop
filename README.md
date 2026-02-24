@@ -35,7 +35,7 @@ We will work through **5 milestones**. After each one you can run the evaluation
 
 ### Tracking your progress
 
-A benchmark of 15 questions is included in `benchmark/train.json`. Some require reasoning, some require files, some require the web. As you add tools, more questions become answerable.
+A benchmark of 20 questions is included in `benchmark/train.json`. Some require reasoning, some require files, some require the web. As you add tools, more questions become answerable.
 
 ```bash
 # Run the full benchmark
@@ -48,9 +48,9 @@ uv run python evaluate.py --question 0
 <!-- TODO: Fill in expected accuracy after each milestone -->
 | After milestone | Expected accuracy |
 |---|---|
-| 1 — Base agent | ~XX% |
-| 2 — Calculator | ~XX% |
-| 3 — PDF reader | ~XX% |
+| 1 — Base agent | ~15% |
+| 2 — Calculator | ~30% |
+| 3 — PDF reader | ~40% |
 | 4 — Web search | ~XX% |
 
 ---
@@ -66,7 +66,7 @@ uv run python evaluate.py --question 0
 
 ```bash
 git clone <repo-url>
-cd gdg-hackathon-prep
+cd AISO-agents-workshop
 ```
 
 ### 2. Install uv (Python package manager)
@@ -286,7 +286,7 @@ How high can you get?
 ### Project Structure
 
 ```
-gdg-hackathon-prep/
+AISO-agents-workshop/
 ├── my_agent/              # ← YOUR WORKSPACE
 │   ├── agent.py          # ← Define your agent here
 │   ├── tools/            # ← Add custom tools here
