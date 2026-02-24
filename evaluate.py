@@ -51,7 +51,7 @@ def print_banner():
     print(f"\n{orange}{Style.BRIGHT}{banner}{Style.RESET_ALL}")
     print(f"{orange}{'=' * 80}{Style.RESET_ALL}")
     print(
-        f"{orange}{Style.BRIGHT}GDG Hackathon - Agent Evaluation System{Style.RESET_ALL}"
+        f"{orange}{Style.BRIGHT}AISO Workshop - Agent Evaluation System{Style.RESET_ALL}"
     )
     print(f"{orange}{'=' * 80}{Style.RESET_ALL}\n")
 
