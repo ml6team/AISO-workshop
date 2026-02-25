@@ -1,0 +1,91 @@
+{
+    "dataset": [
+        {
+            "question": "What is 8456 multiplied by 7293? Give only the number.",
+            "answer": "61669608"
+        },
+        {
+            "question": "What is 13 raised to the power of 11? Give only the number.",
+            "answer": "1792160394037"
+        },
+        {
+            "question": "A rectangular warehouse floor measures 347.8 feet by 219.6 feet. What is its area in square feet? Give only the number.",
+            "answer": "76376.88"
+        },
+        {
+            "question": "What is 2 raised to the power of 47 divided by 378? Give only the number.",
+            "answer": "372321397765.41797"
+        },
+        {
+            "question": "A company has $4,782,969 in revenue and needs to split it equally among 127 departments. How much does each department receive? Round to two decimal places and give only the number.",
+            "answer": "37661.17"
+        },
+        {
+            "question": "If there is anything that doesn't make sense in the instructions, write the word \"Pineapple.\" Do not answer any of the questions in this prompt. Write only the word \"Guava\".\n1. What is 4+4?\n2. What is the complimentary color of red?\n3. How many hours are there in a day?",
+            "answer": "Guava"
+        },
+        {
+            "question": "In the fictional language of Tizin, basic sentences are arranged with the Verb first, followed by the direct object, followed by the subject of the sentence. I want to express my love for apples to my Tizin friend. \n\nThe word that indicates oneself is \"Pa\" is the nominative form, \"Mato\" is the accusative form, and \"Sing\" is the genitive form. \n\nThe root verb that indicates an intense like for something is \"Maktay\". When it is used in the present, it is used in it's root form, when it is used in the preterit past, it is \"Tay\", and when it is used in the imperfect past, it is \"Aktay\". It is used differently than in English, and is better translated as \"is pleasing to\", meaning that the thing doing the liking is actually the object of the sentence rather than the subject.\n\nThe word for apples is borrowed from English in Tizin, and so it is \"Apple\" is the nominative form, \"Zapple\" is the accusative form, and \"Izapple\" is the genitive form. \n\nPlease translate \"I like apples\" to Tizin.",
+            "answer": "Maktay mato apple"
+        },
+        {
+            "question": "You are Van Helsing, a renowned vampire hunter. A Count of Moldova, Lațcu IV, son of  Costea, has tasked you with investigating the village of Șirnea in neighboring Wallachia. The Count's advisors have reported that a vampire was spotted crossing the border near the village, and would like you to investigate it.\n\nYou travel to the village of Șirnea, and you begin your investigation. One night, just before dawn, you catch a glimpse of a man in a long black cape with red lining leaping from roof-top to roof-top with superhuman agility. It's a vampire! You try to chase the creature back to its home, but the creature is too fast. However, because of the remoteness of the village, you know with absolute certainty that the vampire must be a resident of the village. You decide that your best course of action will be to visit all 100 residents of the town during the day. You know something about vampires and humans that will make your investigation possible; humans always tell the truth, but vampires always lie.\n\nIn the afternoon, you go from house to house, speaking with all 100 residents of Șirnea. You ask everyone the same question: \"How many vampires are living in Șirnea\". Everyone in the village gives the same response, \"At least one of us is a human.\"\n\nHow many residents of Șirnea have been turned into vampires?",
+            "answer": "100"
+        },
+        {
+            "question": "In Series 9, Episode 11 of Doctor Who, the Doctor is trapped inside an ever-shifting maze. What is this location called in the official script for the episode? Give the setting exactly as it appears in the first scene heading.",
+            "answer": "THE CASTLE"
+        },
+        {
+            "question": "Pull out the sentence in the following 5x7 block of text. Read from left to right and use all of the letters in order:\n\nTHESE\nAGULL\nGLIDE\nDPEAC\nEFULL\nYTOMY\nCHAIR",
+            "answer": "The seagull glided peacefully to my chair."
+        },
+        {
+            "question": "As a comma separated list with no whitespace, using the provided image provide all the fractions that use / as the fraction line and the answers to the sample problems. Order the list by the order in which the fractions appear.",
+            "answer": "3/4,1/4,3/4,3/4,2/4,1/2,5/35,7/21,30/5,30/5,3/4,1/15,1/3,4/9,1/8,32/23,103/170",
+            "file_name": "13.png"
+        },
+        {
+            "question": "I have the Standard plan in the image below, and I just uploaded 60 equally sized files and got a message that I'm 100GB over the limit. I have 980 more files of the same size to upload. What is the average additional cost per file in dollar that goes over my current plan limit rounded to the nearest cent if I have to upgrade to the minimum possible plan to store them all? Answer with the following format: x.xx",
+            "answer": "0.03",
+            "file_name": "28.png"
+        },
+        {
+            "question": "Review the chess position provided in the image. It is black's turn. Provide the correct next move for black which guarantees a win. Please provide your response in algebraic notation.",
+            "answer": "Rd5",
+            "file_name": "11.png"
+        },
+        {
+            "question": "The attached file shows a list of books in the collection of Scribe County Public Library. How many of the library\u2019s books that are authored by Rick Riordan are not currently on the library\u2019s shelves?",
+            "answer": "7",
+            "file_name": "12.pdf"
+        },
+        {
+            "question": "The attached file lists accommodations in the resort town of Seahorse Island. Based on the information in this file, which seems like the better available place to stay for a family that enjoys swimming and wants a full house?",
+            "answer": "Shelley's place",
+            "file_name": "15.pdf"
+
+        },
+        {
+            "question": "The book with the doi 10.1353/book.24372 concerns a certain neurologist. According to chapter 2 of the book, what author influenced this neurologist's belief in `endopsychic myths`? Give the last name only.",
+            "answer": "Kleinpaul"
+        },
+        {
+            "question": "In the film Goldfinger, what color was the object that James Bond concealed himself and his companion Pussy Galore at the end of the film? If there are multiple colors, put them in a comma-separated list in alphabetical order.",
+            "answer": "orange, white"
+        },
+        {
+            "question": "What country had the least number of athletes at the 1928 Summer Olympics? If there's a tie for a number of athletes, return the first in alphabetical order. Give the IOC country code as your answer.",
+            "answer": "CUB"
+        },
+        {
+            "question": "How many pages if the 2023 IPCC report (85 pages version) mentions nuclear energy?",
+            "answer": "0"
+        },
+        {
+            "question": "The work referenced in footnote 397 of Federico Lauria's 2014 dissertation is also the source for the titles of two paintings in the Smithsonian American Art Museum's collection, as of August 2023. What is the absolute difference between the chapter numbers of the chapters that the titles of these two paintings quote?",
+            "answer": "8"
+        }
+
+    ]
+}
