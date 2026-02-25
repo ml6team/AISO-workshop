@@ -22,12 +22,12 @@ An [agent](https://cdn.openai.com/business-guides-and-resources/a-practical-guid
 
 ## How the Workshop Works
 
-We will work through **5 milestones**. After each one you can run the evaluation benchmark and watch your agent's accuracy climb.
+We will work through **5 milestones**. After each one you can run the evaluation benchmark and watch your agent's accuracy climb. At the end of each one, we will push a solution to this repository so you can compare it with yours and continue building.
 
 | | Milestone | What you'll do | Estimated time |
 |---|---|---|---|
 | 0 | **Setup** | Clone, install, get the UI running | ~15 min |
-| 1 | **Setup your agent** | Configure a bare-bones agent and chat with it | ~15 min |
+| 1 | **Your first agent** | Configure a bare-bones agent and chat with it | ~15 min |
 | 2 | **Calculator tool** | Give your agent the ability to do math | ~20 min |
 | 3 | **PDF reader tool** | Let your agent extract information from PDFs | ~30 min |
 | 4 | **Web search tool** | Connect your agent to the internet | ~40 min |
@@ -35,7 +35,7 @@ We will work through **5 milestones**. After each one you can run the evaluation
 
 ### Tracking your progress
 
-A benchmark of 20 questions is included in `benchmark/train.json`. Some require reasoning, some require files, some require the web. As you add tools, more questions become answerable.
+A benchmark of 20 questions is included in `benchmark/train.json`. Some require reasoning, some require files, some require the web. As you add tools, more questions become answerable. 
 
 ```bash
 # Run the full benchmark
@@ -45,12 +45,19 @@ uv run python evaluate.py
 uv run python evaluate.py --question 0
 ```
 
+You can find an overview of which questions require a specific tool here:
+
+| Tool | Question indices |
+|---|---|
+| Calculator | 0–4 |
+| PDF reader | 5–9 |
+
 <!-- TODO: Fill in expected accuracy after each milestone -->
 | After milestone | Expected accuracy |
 |---|---|
-| 1 — Base agent | ~15% |
-| 2 — Calculator | ~30% |
-| 3 — PDF reader | ~40% |
+| 1 — Base agent | ~XX% |
+| 2 — Calculator | ~XX% |
+| 3 — PDF reader | ~XX% |
 | 4 — Web search | ~XX% |
 
 ---
@@ -121,7 +128,7 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. You should 
 
 ---
 
-## Milestone 1 — Setup Your Agent
+## Milestone 1 — Your First Agent
 
 **Goal:** Understand how the agent is configured and have a working baseline you can chat with.
 
@@ -191,8 +198,8 @@ Look at the benchmark questions — some reference PDF attachments (e.g., a libr
 
 ### Hints
 
-1. Look at the existing `read_files.py` for inspiration — it already handles PNG files.
-2. Create a new function (in the same file or a new one) that reads a PDF and returns its text content.
+1. Create a new file `my_agent/tools/read_pdf.py`.
+2. Write a Python function that takes a file path, reads the PDF, and returns its text content.
 3. Consider libraries like `PyMuPDF` (`fitz`), `pdfplumber`, or `pypdf`. You'll need to add your chosen library to the project dependencies:
    ```bash
    uv add <library-name>
@@ -200,7 +207,7 @@ Look at the benchmark questions — some reference PDF attachments (e.g., a libr
 4. Think about what your function should return. Raw text? A summary? How will the agent use it?
 5. Remember: the **docstring** tells the agent when to use the tool. Make it clear that this tool is for PDF files.
 6. Register the tool in `agent.py` just like you did with the calculator.
-7. Test with a question that uses a PDF attachment (e.g., question 8 or 9 in the benchmark):
+7. Test with a question that uses a PDF attachment (questions 5–9):
    ```bash
    uv run python evaluate.py --question 8
    ```
@@ -254,10 +261,10 @@ You've built a solid agent with tools for math, PDFs, and web search. Now it's t
 ### Ideas to explore
 
 - **Multi-agent architectures** — Use `sub_agents` in ADK to create specialized agents (e.g., a "researcher" and a "calculator") orchestrated by a coordinator. Check the [ADK docs on multi-agent systems](https://google.github.io/adk-docs/).
-- **Image understanding** — The existing `read_png_as_string` tool is basic. Can you improve it? Support more formats? Ask more targeted questions about the image instead of a generic "describe this"?
+- **Image understanding** — Can you build a tool that reads and interprets images? Think about supporting multiple formats and extracting targeted information rather than generic descriptions.
 - **Better prompting** — Revisit your agent's `instruction`. Add reasoning strategies, output formatting rules, or few-shot examples.
 - **Smarter tool design** — Can your tools return structured data? Can you combine tools in clever ways?
-- **Try a more powerful model** — Switch to `gemini-2.0-flash` or `gemini-2.5-flash` and see if accuracy improves.
+- **Try a more powerful model** — Switch to `gemini-2.5-flash` or `gemini-2.5-pro` and see if accuracy improves.
 - **Analyze your failures** — Look at which benchmark questions your agent gets wrong and why. Fix the weakest link.
 
 ### Run the benchmark one last time
