@@ -110,7 +110,7 @@ Be strict but fair - minor variations in wording are acceptable if the core answ
 
     try:
         llm_response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemini-2.5-flash",
             contents=prompt,
             config={
                 "response_mime_type": "application/json",
