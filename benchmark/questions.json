@@ -50,7 +50,7 @@
         },
         {
             "id": 10,
-            "question": "In the Scikit-Learn July 2017 changelog, what other predictor base command received a bug fix? Just give the name, not a path.",
+            "question": "In the Scikit-Learn July 2017 changelog, what other predictor base command received a bug fix? Just give the name, not a path. Use this URL to find the answer: https://scikit-learn.org/stable/whats_new/v0.19.html#version-0-19",
             "answer": "BaseLabelPropagation"
         },
         {
