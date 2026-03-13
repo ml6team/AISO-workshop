@@ -1,7 +1,7 @@
 import math
 
 
-def calculator(operation: str, a: float, b: float = 0) -> str:
+def calculator(operation: str, a: float, b: float = 0.0) -> str:
     """Perform a mathematical calculation.
 
     Use this tool for ANY arithmetic or math operation. Supported operations:
