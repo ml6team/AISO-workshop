@@ -10,8 +10,6 @@ root_agent = llm_agent.Agent(
     name="agent",
     description="A helpful assistant.",
     instruction=(
-        "You are a helpful assistant that answers "
-        "questions directly and concisely."
     ),
     tools=[],
     sub_agents=[],
