@@ -1,49 +1,38 @@
-import math
-
-
 def calculator(operation: str, a: float, b: float = 0.0) -> str:
-    """Perform a mathematical calculation.
+    """Perform a basic arithmetic operation.
 
-    Use this tool for ANY arithmetic or math operation. Supported operations:
-    - "add": returns a + b
-    - "subtract": returns a - b
-    - "multiply": returns a * b
-    - "divide": returns a / b
-    - "power": returns a raised to the power of b
-    - "sqrt": returns the square root of a (b is ignored)
-    - "modulo": returns a % b
+    Use this tool for all arithmetic instead of mental math.
 
     Args:
-        operation: The math operation to perform. One of: add, subtract, multiply, divide, power, sqrt, modulo.
-        a: The first number.
-        b: The second number (not used for sqrt).
+        operation: One of add, subtract, multiply, divide, power, or sqrt.
+        a: Left operand, or the value for sqrt.
+        b: Right operand for binary operations.
 
     Returns:
-        The result of the calculation as a string.
+        The numeric result as a string, or an error string.
     """
-    operation = operation.lower().strip()
+    operation_name = operation.strip().lower()
 
-    if operation == "add":
+    if operation_name == "add":
         result = a + b
-    elif operation == "subtract":
+    elif operation_name == "subtract":
         result = a - b
-    elif operation == "multiply":
+    elif operation_name == "multiply":
         result = a * b
-    elif operation == "divide":
+    elif operation_name == "divide":
         if b == 0:
             return "Error: Division by zero."
         result = a / b
-    elif operation == "power":
-        result = a ** b
-    elif operation == "sqrt":
+    elif operation_name == "power":
+        result = a**b
+    elif operation_name == "sqrt":
         if a < 0:
             return "Error: Cannot take square root of a negative number."
-        result = math.sqrt(a)
-    elif operation == "modulo":
-        if b == 0:
-            return "Error: Modulo by zero."
-        result = a % b
+        result = a**0.5
     else:
-        return f"Error: Unknown operation '{operation}'. Supported: add, subtract, multiply, divide, power, sqrt, modulo."
+        return (
+            "Error: Unknown operation. Use add, subtract, multiply, divide, "
+            "power, or sqrt."
+        )
 
     return str(result)
